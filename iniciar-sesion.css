@@ -1,0 +1,227 @@
+@font-face {
+  font-family: Fredoka;
+  src: url('./assets/Fredoka-Variable.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fredoka Bold';
+  src: url('./assets/Fredoka-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --vino: #410102;
+  --crema: #f5f0ea;
+  --rojo: #740c03;
+  --etiqueta: #5c170b;
+  --texto-secundario: #846f6b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #280102;
+  color: var(--crema);
+  font-family: Fredoka, system-ui, sans-serif;
+}
+
+p, h1 { margin: 0; }
+
+button, input { font: inherit; }
+
+button {
+  border: 0;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.acceso {
+  width: min(100%, 480px);
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin-inline: auto;
+  padding: 80px clamp(12px, 5.5vw, 22px) 69px;
+  background: linear-gradient(#41010280, #41010280),
+    var(--vino) url('./assets/splash-fondo.png') center top / cover no-repeat;
+}
+
+.bienvenida {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 43px;
+  font-size: 15px;
+  line-height: 21px;
+}
+
+.marca {
+  font-family: 'Fredoka Bold', Fredoka, system-ui, sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 90px;
+  text-align: center;
+  transform: translateY(-6px);
+}
+
+.bienvenida > p:not(.marca) { position: relative; left: min(8px, 2vw); }
+
+.saludo {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 39px;
+}
+
+.tarjeta {
+  max-width: 358px;
+  min-height: 450px;
+  margin-inline: auto;
+  padding: 33px 21px 25px;
+  border-radius: 23px;
+  background: var(--crema);
+  color: var(--rojo);
+}
+
+.tarjeta h1 {
+  font-family: 'Fredoka Bold', Fredoka, system-ui, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 37px;
+}
+
+.introduccion {
+  color: var(--texto-secundario);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+form { margin-top: 25px; }
+
+.campo + .campo { margin-top: 19px; }
+
+.campo label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--etiqueta);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 17px;
+}
+
+.campo input {
+  display: block;
+  width: 100%;
+  height: 44px;
+  padding: 0 13px;
+  border: 1px solid #e9ddd7;
+  border-radius: 9px;
+  background: white;
+  color: var(--etiqueta);
+  font-size: 14px;
+}
+
+.campo input::placeholder {
+  color: var(--texto-secundario);
+  opacity: 1;
+}
+
+.campo-contrasena { position: relative; }
+
+.campo-contrasena input { padding-right: 80px; }
+
+#mostrar-contrasena {
+  position: absolute;
+  inset: 1px 7px 1px auto;
+  padding: 0 10px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.recuperar {
+  display: block;
+  margin: 2px auto 9px;
+  padding: 10px 4px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 19px;
+}
+
+.recordar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  min-height: 17px;
+  padding-left: 2px;
+  color: var(--etiqueta);
+  font-size: 13px;
+  line-height: 17px;
+  cursor: pointer;
+}
+
+.recordar input {
+  appearance: none;
+  display: grid;
+  place-items: center;
+  flex: 0 0 17px;
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  border: 1px solid #d2bab0;
+  border-radius: 4px;
+  background: white;
+  color: var(--rojo);
+  cursor: pointer;
+}
+
+.recordar input:checked::after {
+  content: '';
+  width: 8px;
+  height: 4px;
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+  transform: translateY(-1px) rotate(-45deg);
+}
+
+.enviar {
+  display: block;
+  width: 100%;
+  min-height: 49px;
+  margin-top: 25px;
+  padding: 14px 16px 11px;
+  border-radius: 13px;
+  background: var(--rojo);
+  color: var(--crema);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+#estado-acceso:not(:empty) {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.registro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 42px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.registro a { padding: 10px 0; color: inherit; text-decoration: none; }
+
+.recuperar:hover, .registro a:hover { text-decoration: underline; }

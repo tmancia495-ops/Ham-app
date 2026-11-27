@@ -1,0 +1,59 @@
+body.marco-ham.pagina-registro-negocio { background: #f5f0ea; }
+.pagina-registro-negocio:not(.viendo-condiciones)::after { display: none; }
+.cabecera-negocio {
+  min-height: 229px;
+  background: linear-gradient(#41010280, #41010280), url('./assets/splash-fondo.png') center -1px / 100% auto no-repeat #410102;
+}
+.cabecera-negocio h1 { margin: 25px 0 2px; }
+.formulario-negocio {
+  position: relative;
+  margin: -15px 18px 13px;
+  padding: 22px 19px 15px;
+  border-radius: 22px;
+  background: #fffdfc;
+}
+.formulario-negocio h2 { font-size: 21px; line-height: 30px; }
+.formulario-negocio .intro-repartidor { margin-bottom: 12px; font-size: 13px; line-height: 18px; }
+.formulario-negocio .datos-registro-negocio {
+  display: grid;
+  grid-template-columns: minmax(0, 153fr) minmax(0, 163fr);
+  gap: 7px 12px;
+}
+.formulario-negocio .campo-negocio { min-width: 0; margin: 0; }
+.campo-nombre, .campo-encargado, .campo-correo, .modalidades-negocio, .aceptacion-negocio { grid-column: 1 / -1; }
+.formulario-negocio .campo-negocio input, .formulario-negocio .campo-negocio select { background: #f5f0ea; }
+.formulario-negocio .campo-negocio select { text-overflow: ellipsis; }
+.formulario-negocio .campo-categoria input, .formulario-negocio .campo-categoria select, .formulario-negocio .campo-horario input { min-height: 42px; }
+.campo-horario input { min-width: 0; }
+.ayuda-negocio { margin: 3px 0 0; color: #846f6b; font-size: 12px; line-height: 16px; }
+.modalidades-negocio legend { margin-bottom: 2px; padding: 0; color: #5c170b; font-size: 13px; font-weight: 500; }
+.modalidades-negocio > div { display: grid; grid-template-columns: minmax(0, 155fr) minmax(0, 163fr); gap: 10px; }
+.modalidades-negocio label { position: relative; display: block; }
+.modalidades-negocio input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.modalidades-negocio span { display: flex; align-items: center; gap: 5px; min-height: 39px; padding: 5px 12px 5px 20px; border: 1px solid #e9ddd7; border-radius: 11px; color: #740c03; font-size: 14px; font-weight: 500; }
+.modalidades-negocio b {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 15px;
+  height: 15px;
+  border: 1px solid #740c03;
+  border-radius: 4px;
+  background: #f5f0ea;
+  color: transparent;
+  font-size: 12px;
+  line-height: 1;
+}
+.modalidades-negocio input:checked + span { border-color: #740c03; background: #740c03; color: #f5f0ea; }
+.modalidades-negocio input:checked + span b { border-color: #f5f0ea; color: #740c03; }
+.modalidades-negocio input:focus-visible + span { outline: 2px solid #740c03; outline-offset: 2px; }
+.aceptacion-negocio { margin-top: 5px; }
+.aceptacion-negocio label { display: flex; align-items: center; gap: 8px; min-height: 36px; color: #5c170b; font-size: 13px; }
+.aceptacion-negocio input { flex: 0 0 auto; width: 17px; height: 17px; margin: 0; accent-color: #740c03; }
+.enlace-terminos-negocio { display: inline-block; padding-block: 4px; color: #740c03; font-size: 12px; }
+.nota-registro-negocio { margin: 6px 0 10px; }
+#solicitar-registro { width: 100%; min-height: 52px; }
+.condiciones-negocio .cabecera-condiciones h1 { font-size: 23px; line-height: 26px; }
+.condiciones-negocio article { gap: 15px; }
+.condiciones-negocio article h2 { font: 700 24px/29px 'Fredoka Bold', Fredoka, sans-serif; }
+.condiciones-negocio article .subtitulo-terminos { color: #846f6b; }
+.condiciones-negocio hr { width: 100%; border: 0; border-top: 1px solid #e7dad2; }

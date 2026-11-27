@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script src="./transiciones-ham.js"></script>
+  <meta charset="utf-8">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/ham-icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/ham-icon-180.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Ham!">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <meta name="theme-color" content="#410102">
+  <title>Registrar mi negocio · Ham!</title>
+  <link rel="stylesheet" href="./iniciar-sesion.css">
+  <link rel="stylesheet" href="./inicio.css">
+  <link rel="stylesheet" href="./busqueda.css">
+  <link rel="stylesheet" href="./marco-ham.css">
+  <link rel="stylesheet" href="./repartidor.css">
+  <link rel="stylesheet" href="./informacion-legal.css">
+  <link rel="stylesheet" href="./registrar-negocio.css">
+  <script src="./cuenta-local.js" defer></script>
+  <script src="./documentos-legales.js" defer></script>
+  <script src="./documentos-legales/negocios.js" defer></script>
+  <script src="./lector-legal.js" defer></script>
+  <script src="./datos-negocios.js" defer></script>
+  <script src="./datos-inicio.js" defer></script>
+  <script src="./config-registro-negocio.js" defer></script>
+  <script src="./comercio-local.js" defer></script>
+  <script src="./registrar-negocio.js" defer blocking="render"></script>
+</head>
+<body class="marco-ham pagina-inicio pagina-repartidor formulario-rol-ham pagina-registro-negocio">
+  <main class="inicio solicitud-negocio" data-node-id="401:217" hidden>
+    <header class="cabecera-repartidor cabecera-negocio">
+      <a class="volver-repartidor" href="./inicio.html#perfil" data-regreso-cabecera aria-label="Volver a Perfil">‹</a>
+      <p>Registra tu negocio</p>
+      <h1>Haz crecer tu negocio</h1>
+      <p>Llega a más personas dentro de la UCA.</p>
+    </header>
+    <form class="formulario-repartidor formulario-negocio" novalidate>
+      <h2>Datos del establecimiento</h2>
+      <p class="intro-repartidor">Cuéntanos sobre tu negocio.</p>
+      <p id="estado-negocio" class="estado-repartidor" role="status" hidden></p>
+      <fieldset id="datos-registro-negocio" class="datos-registro-negocio">
+        <div class="campo-repartidor campo-negocio campo-nombre">
+          <label for="negocio-nombre">Nombre del negocio</label>
+          <input id="negocio-nombre" name="nombre" type="text" placeholder="Ej. LOLO'S" autocomplete="organization" aria-describedby="error-negocio-nombre" required>
+          <p id="error-negocio-nombre" class="error-repartidor" role="status"></p>
+        </div>
+        <div class="campo-repartidor campo-negocio campo-encargado">
+          <label for="negocio-encargado">Nombre del encargado</label>
+          <input id="negocio-encargado" name="encargado" type="text" placeholder="Nombre y apellido" autocomplete="name" aria-describedby="error-negocio-encargado" required>
+          <p id="error-negocio-encargado" class="error-repartidor" role="status"></p>
+        </div>
+        <div class="campo-repartidor campo-negocio campo-correo">
+          <label for="negocio-correo">Correo electrónico</label>
+          <input id="negocio-correo" name="correo" type="email" placeholder="contacto@negocio.com" autocomplete="email" aria-describedby="ayuda-correo-negocio error-negocio-correo" required>
+          <p id="ayuda-correo-negocio" class="ayuda-negocio">Ingresa el correo electrónico de contacto de tu establecimiento.</p>
+          <p id="error-negocio-correo" class="error-repartidor" role="status"></p>
+        </div>
+        <div class="campo-repartidor campo-negocio campo-telefono">
+          <label for="negocio-telefono">Número de teléfono</label>
+          <input id="negocio-telefono" name="telefono" type="tel" placeholder="7000 0000" autocomplete="tel-national" aria-describedby="error-negocio-telefono" required>
+          <p id="error-negocio-telefono" class="error-repartidor" role="status"></p>
+        </div>
+        <div class="campo-repartidor campo-negocio campo-ubicacion">
+          <label for="negocio-ubicacion">Ubicación en la PEA</label>
+          <select id="negocio-ubicacion" name="ubicacion" aria-describedby="error-negocio-ubicacion" required><option value="" disabled selected>Seleccionar ⌄</option></select>
+          <p id="error-negocio-ubicacion" class="error-repartidor" role="status"></p>
+        </div>
+        <div class="campo-repartidor campo-negocio campo-categoria">
+          <label for="negocio-categoria">Categoría de comida</label>
+          <select id="negocio-categoria" name="categoria" aria-describedby="error-negocio-categoria" required><option value="" disabled selected>Comida rápida ⌄</option></select>
+          <p id="error-negocio-categoria" class="error-repartidor" role="status"></p>
+        </div>
+        <div class="campo-repartidor campo-negocio campo-horario">
+          <label for="negocio-horario">Horario de atención</label>
+          <input id="negocio-horario" name="horario" type="time" aria-describedby="error-negocio-horario" required>
+          <p id="error-negocio-horario" class="error-repartidor" role="status"></p>
+        </div>
+        <fieldset class="modalidades-negocio" aria-describedby="error-negocio-modalidades">
+          <legend>¿Qué modalidades ofrecerás?</legend>
+          <div>
+            <label><input type="checkbox" name="modalidades" value="delivery"><span>Delivery <b aria-hidden="true">✓</b></span></label>
+            <label><input type="checkbox" name="modalidades" value="takeout"><span>Take out <b aria-hidden="true">✓</b></span></label>
+          </div>
+          <p id="error-negocio-modalidades" class="error-repartidor" role="status"></p>
+        </fieldset>
+        <div class="aceptacion-negocio">
+          <p class="ayuda-negocio">Para negocios operados por menores de edad se requiere autorización escrita de sus padres o tutores. Su comprobación queda pendiente de revisión administrativa.</p>
+          <label><input type="checkbox" name="aceptacion" required aria-describedby="error-negocio-aceptacion"> Acepto los términos y condiciones para negocios.</label>
+          <p id="error-negocio-aceptacion" class="error-repartidor" role="status"></p>
+        </div>
+      </fieldset>
+      <a class="enlace-terminos-negocio" href="#condiciones">Consultar términos y condiciones</a>
+      <p class="ayuda-negocio nota-registro-negocio">Solicitud de prueba para este prototipo.</p>
+      <button class="boton-repartidor" id="solicitar-registro" type="submit">Solicitar registro</button>
+      <p id="error-registro-negocio" class="error-repartidor" role="status"></p>
+    </form>
+  </main>
+  <main class="inicio condiciones-repartidor condiciones-negocio lector-legal" data-documento-legal="negocios" data-retorno="./registrar-negocio.html" hidden></main>
+  <dialog class="confirmacion-repartidor" aria-labelledby="titulo-confirmacion" aria-describedby="texto-confirmacion" data-node-id="689:1163">
+    <h2 id="titulo-confirmacion">¡Solicitud registrada!</h2>
+    <p id="texto-confirmacion">Tu solicitud quedó guardada en esta demostración de Ham!. Podrá enviarse para revisión cuando el sistema de registro esté disponible.</p>
+    <form method="dialog"><button class="boton-repartidor" value="entendido">Entendido</button></form>
+  </dialog>
+</body>
+</html>

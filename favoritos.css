@@ -1,0 +1,36 @@
+.pagina-favoritos [hidden] { display: none !important; }
+.pagina-favoritos::before, .pagina-favoritos .barra-inicio::before { display: none; }
+.marco-ham.pagina-favoritos > .inicio { padding: 0 0 12px; }
+.cabecera-favoritos {
+  min-height: var(--alto-cabecera-ham);
+  position: relative;
+  padding: 71px 24px 48px;
+  color: var(--crema);
+}
+.cabecera-favoritos > a { position: absolute; left: 16px; top: 40px; }
+.cabecera-favoritos h1 { margin-left: 37px; font: 700 25px/32px 'Fredoka Bold', Fredoka, sans-serif; }
+.cabecera-favoritos p { margin-top: 21px; font-size: 14px; }
+.ilustracion-favoritos, .explorar-icono-favoritos { display: grid; place-items: center; }
+.ilustracion-favoritos img, .explorar-icono-favoritos img { grid-area: 1 / 1; }
+.ilustracion-favoritos { position: absolute; top: 154px; right: 40px; }
+.pestanas-favoritos { position: relative; display: grid; grid-template-columns: 1fr 1fr; min-height: 54px; margin: -17px 20px 0; padding: 5px; border-radius: 16px; background: #f0e5df; }
+.pestanas-favoritos button { min-width: 0; padding: 0 4px; border-radius: 12px; font-size: 16px; font-weight: 600; transition: background-color 200ms ease-out, color 200ms ease-out; }
+.pestanas-favoritos button[aria-selected="true"] { color: var(--crema); background: var(--rojo); }
+.panel-favoritos-lista { margin: 26px 20px 0; }
+.panel-favoritos-lista > header { display: flex; justify-content: space-between; align-items: center; padding: 0 3px; margin-bottom: 12px; color: var(--texto-secundario); font-size: 12px; }
+.panel-favoritos-lista h2 { margin: 0; text-transform: uppercase; font: 700 12px/15px 'Fredoka Bold', Fredoka, sans-serif; }
+#lista-favoritos { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px 16px; padding: 0; margin: 0; list-style: none; }
+#vacio-favoritos { margin: 0 0 12px; color: var(--texto-secundario); font-size: 15px; }
+.tarjeta-favorito { position: relative; min-width: 0; min-height: 229px; border: 1px solid #e7dad2; border-radius: 17px; background: white; }
+.tarjeta-favorito > a { display: block; min-height: 227px; padding: 9px 9px 32px; color: inherit; text-decoration: none; }
+.tarjeta-favorito > a > img { display: block; width: 100%; height: 129px; object-fit: cover; object-position: center top; border-radius: 13px; }
+.tarjeta-favorito > a > img[data-recorte="centro"] { object-position: center; }
+.tarjeta-favorito strong { display: block; margin: 11px 2px 3px; font: 700 18px/22px 'Fredoka Bold', Fredoka, sans-serif; overflow-wrap: anywhere; }
+.tarjeta-favorito p { margin-inline: 2px; color: var(--texto-secundario); font-size: 12px; overflow-wrap: anywhere; }
+.tarjeta-favorito .boton-favorito { position: absolute; right: 11px; bottom: 6px; }
+.tarjeta-favorito.explorar-favoritos { border-color: transparent; background: #f0e5df; }
+.explorar-favoritos > a { display: grid; align-content: center; justify-items: center; text-align: center; padding: 15px; }
+.explorar-favoritos strong { margin-top: 17px; }
+.pagina-favoritos footer { margin: 30px auto 0; color: var(--texto-secundario); text-align: center; font-size: 12px; }
+
+@media (prefers-reduced-motion: reduce) { .pestanas-favoritos button { transition: none; } }

@@ -1,0 +1,418 @@
+[hidden] { display: none !important; }
+
+.perfil {
+  padding-top: 79px;
+  padding-bottom: 42px;
+  background-position: center, center 3px;
+}
+
+.perfil .bienvenida {
+  margin-bottom: 32px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.perfil .bienvenida > p:not(.marca) { left: min(4px, 1vw); }
+
+.perfil .saludo {
+  font-family: 'Fredoka Bold', Fredoka, system-ui, sans-serif;
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+.perfil .tarjeta { padding: 22px 21px 17px; }
+
+.perfil h1 { font-size: 25px; line-height: 34px; }
+
+.perfil .introduccion { font-size: 13px; line-height: 18px; }
+
+.control-foto { margin-top: 13px; }
+
+.avatar {
+  position: relative;
+  display: block;
+  width: 84px;
+  height: 84px;
+  margin-inline: auto;
+  padding: 0;
+}
+
+.avatar img { display: block; }
+
+#avatar-usuario { position: absolute; top: 18px; left: 22px; }
+
+#avatar-foto {
+  position: absolute;
+  inset: 2px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar-insignia {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  bottom: 1px;
+  right: -5px;
+}
+
+.avatar-insignia img { grid-area: 1 / 1; }
+.avatar-insignia-panel { display: none; }
+body:has(#fotos[open][data-vista="panel"]) .avatar-insignia { display: none; }
+body:has(#fotos[open][data-vista="panel"]) .avatar-insignia-panel { display: grid; }
+
+#editar-foto {
+  display: block;
+  width: min(100%, 196px);
+  margin: 11px auto 0;
+  padding: 4px 6px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.perfil form { margin-top: 11px; }
+.perfil .campo + .campo { margin-top: 12px; }
+.perfil .campo label { color: var(--vino); font-size: 13px; }
+.perfil .campo input { height: 45px; border-color: #e7dad2; border-radius: 10px; }
+
+#ejemplo-direccion {
+  margin: 2px 2px 0;
+  color: var(--texto-secundario);
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.perfil .enviar {
+  min-height: 51px;
+  margin-top: 10px;
+  padding: 12px 8px;
+  border-radius: 12px;
+  font-size: 18px;
+}
+
+.nota-perfil {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 17px;
+}
+
+body:has(#fotos[open]) > .perfil { overflow: hidden; }
+
+#fotos {
+  position: fixed;
+  inset: auto 0 var(--espacio-bajo-marco-ham);
+  width: min(100%, var(--ancho-diseno-ham));
+  max-width: none;
+  max-height: var(--alto-marco-ham);
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  border-radius: 28px 28px 0 0;
+  background: var(--crema);
+  color: var(--rojo);
+}
+
+#fotos::backdrop {
+  background: #14080799;
+  clip-path: inset(0 max(0px, (100% - var(--ancho-diseno-ham)) / 2) var(--espacio-bajo-marco-ham));
+}
+
+#fotos[data-vista="panel"][open] { animation: subir-panel 180ms ease-out; }
+
+@keyframes subir-panel {
+  from { transform: translateY(100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #fotos[data-vista="panel"][open] { animation: none; }
+}
+
+#fotos:not([data-vista="panel"]) {
+  height: var(--alto-marco-ham);
+  border-radius: 0;
+}
+
+#fotos h2, #fotos h3 { margin: 0; }
+#fotos h2:focus, #fotos h2:focus-visible { outline: none; }
+
+.panel-foto { padding: 12px 19px max(27px, env(safe-area-inset-bottom)); }
+
+.barra-panel {
+  width: 50px;
+  height: 5px;
+  margin: 0 auto 23px;
+  border-radius: 3px;
+  background: #c6b2a9;
+}
+
+.panel-foto header { margin: 0 5px 18px; }
+
+.panel-foto h2 {
+  font-family: 'Fredoka Bold', Fredoka, system-ui, sans-serif;
+  font-size: 24px;
+  line-height: 35px;
+}
+
+.panel-foto header p { color: var(--texto-secundario); font-size: 13px; line-height: 18px; }
+
+.opcion-foto {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  width: 100%;
+  min-height: 60px;
+  padding: 10px 18px 10px 12px;
+  border: 1px solid #e7dad2;
+  border-radius: 14px;
+  background: #fffdfc;
+  color: var(--vino);
+  font-size: 17px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.opcion-foto + .opcion-foto { margin-top: 7px; }
+
+.icono-opcion {
+  display: grid;
+  place-items: center;
+  flex: 0 0 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: #f0e5df;
+}
+
+.flecha-opcion { margin-left: auto; }
+.eliminar-foto { color: #a12b21; }
+.eliminar-foto .icono-opcion { background: #f6e4e1; }
+
+.cancelar-panel {
+  width: 100%;
+  min-height: 49px;
+  margin-top: 23px;
+  border-radius: 12px;
+  background: #f0e5df;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.vista-foto {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.galeria { background: #f8f8fa; color: #181719; }
+
+.cabecera-galeria {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 71px 22px 20px 20px;
+  border-bottom: 1px solid #e8e6e8;
+}
+
+.cabecera-galeria h2 { font: 700 29px/38px 'Fredoka Bold', Fredoka, system-ui, sans-serif; }
+.cabecera-galeria button { color: var(--rojo); font-size: 15px; font-weight: 600; }
+.cabecera-galeria p, #error-galeria { color: #6e6c72; font-size: 13px; }
+
+.contenido-galeria { padding: 15px 20px 24px; }
+.contenido-galeria h3 { font-size: 20px; font-weight: 600; }
+
+#elegir-archivo {
+  min-height: 42px;
+  margin-top: 8px;
+  padding: 6px 12px;
+  border: 1px solid #e7dad2;
+  border-radius: 10px;
+  background: white;
+  color: var(--rojo);
+  text-align: left;
+}
+
+#error-galeria:not(:empty) { margin-top: 8px; }
+
+#muestra-galeria {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  margin: 16px auto 0;
+}
+
+#imagen-galeria {
+  display: block;
+  max-width: 100%;
+  max-height: calc(var(--alto-marco-ham) * .48);
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.marca-seleccion {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: grid;
+  place-items: center;
+}
+
+.marca-seleccion img { grid-area: 1 / 1; }
+
+.pie-galeria {
+  margin-top: auto;
+  padding: 15px 22px max(36px, env(safe-area-inset-bottom));
+  border-top: 1px solid #e8e6e8;
+  background: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pie-galeria .enviar {
+  min-height: 53px;
+  margin-top: 11px;
+  border-radius: 14px;
+  font-size: 18px;
+}
+
+#fotos button:disabled { cursor: default; opacity: .45; }
+
+.camara { background: #101013; color: white; }
+
+.cabecera-camara {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  min-height: 124px;
+  padding: 62px 22px 22px;
+}
+
+.cabecera-camara h2 { font-size: 17px; font-weight: 600; }
+.cabecera-camara button { justify-self: start; padding: 6px 0; }
+#flash { justify-self: end; padding-inline: 5px; }
+
+.visor {
+  position: relative;
+  height: clamp(230px, calc(var(--alto-marco-ham) - 332px), 650px);
+  overflow: hidden;
+  background: #413432;
+}
+
+.visor video, .visor > img { width: 100%; height: 100%; object-fit: cover; }
+
+.guias {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  justify-items: center;
+  align-content: end;
+  padding-bottom: 24px;
+  pointer-events: none;
+  font-size: 13px;
+  font-weight: 500;
+  background:
+    linear-gradient(to right, transparent calc(33.333% - .5px), #ffffff2b 33.333%, transparent calc(33.333% + .5px), transparent calc(66.666% - .5px), #ffffff2b 66.666%, transparent calc(66.666% + .5px)),
+    linear-gradient(to bottom, transparent calc(33.333% - .5px), #ffffff2b 33.333%, transparent calc(33.333% + .5px), transparent calc(66.666% - .5px), #ffffff2b 66.666%, transparent calc(66.666% + .5px)),
+    linear-gradient(transparent 72%, #10101380);
+}
+
+.enfoque {
+  position: absolute;
+  inset: 46% auto auto 50%;
+  width: 170px;
+  height: 170px;
+  transform: translate(-50%, -50%);
+  background:
+    linear-gradient(#fffc, #fffc) top left / 28px 3px,
+    linear-gradient(#fffc, #fffc) top left / 3px 28px,
+    linear-gradient(#fffc, #fffc) top right / 28px 3px,
+    linear-gradient(#fffc, #fffc) top right / 3px 28px,
+    linear-gradient(#fffc, #fffc) bottom left / 28px 3px,
+    linear-gradient(#fffc, #fffc) bottom left / 3px 28px,
+    linear-gradient(#fffc, #fffc) bottom right / 28px 3px,
+    linear-gradient(#fffc, #fffc) bottom right / 3px 28px;
+  background-repeat: no-repeat;
+}
+
+.pie-camara {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 22px max(12px, env(safe-area-inset-bottom));
+}
+
+#estado-camara { color: #e7c99a; text-align: center; font-size: 15px; font-weight: 600; }
+
+.controles-camara {
+  display: grid;
+  grid-template-columns: 1fr 76px 1fr;
+  align-items: center;
+  width: 100%;
+  margin: 36px 0 20px;
+}
+
+.controles-camara button { display: grid; place-items: center; justify-self: center; padding: 0; }
+#capturar img { grid-area: 1 / 1; }
+#galeria-camara { width: 49px; height: 49px; border-radius: 10px; overflow: hidden; background: #f0e5df; }
+#ultima-foto { width: 49px; height: 49px; object-fit: cover; }
+
+.controles-captura { display: flex; gap: 12px; width: 100%; margin: 24px 0; }
+.controles-captura button { flex: 1; min-height: 48px; border-radius: 12px; margin: 0; }
+#repetir { background: #413432; }
+#volver-camara { padding: 8px 12px; text-decoration: underline; }
+
+.indicador-inicio {
+  width: 104px;
+  height: 4px;
+  margin-top: auto;
+  border-radius: 3px;
+  background: white;
+}
+
+#cancelar-edicion-perfil:not([hidden]) {
+  display: block;
+  margin-top: 12px;
+  color: var(--rojo);
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Este diseño solo se activa en la edición de una cuenta existente. */
+.marco-ham.pagina-editor-perfil > .perfil {
+  height: calc(100% - var(--alto-barra-inicio));
+  padding: 0 0 24px;
+  background: transparent;
+  overflow-x: hidden;
+}
+.pagina-editor-perfil .bienvenida {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--alto-cabecera-ham);
+  margin: 0;
+  padding: 76px 24px 24px;
+  color: #f5f0ea;
+  text-align: left;
+}
+.pagina-editor-perfil .bienvenida h1 { margin: 0 0 22px 38px; font-family: 'Fredoka Bold', Fredoka, sans-serif; }
+.pagina-editor-perfil .bienvenida > p.introduccion { left: 0; margin: 0; }
+.pagina-editor-perfil .bienvenida #cancelar-edicion-perfil:not([hidden]) {
+  position: absolute;
+  top: 40px;
+  left: 16px;
+  margin: 0;
+}
+.pagina-editor-perfil .perfil .tarjeta {
+  position: relative;
+  width: calc(100% - 40px);
+  box-sizing: border-box;
+  margin-top: -15px;
+  background: #fff;
+}

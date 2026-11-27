@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script src="./transiciones-ham.js"></script>
+  <meta charset="utf-8">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/ham-icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/ham-icon-180.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Ham!">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f0ea">
+  <title>Estado del pedido · Ham!</title>
+  <link rel="stylesheet" href="./iniciar-sesion.css">
+  <link rel="stylesheet" href="./inicio.css">
+  <link rel="stylesheet" href="./marco-ham.css">
+  <link rel="stylesheet" href="./estado-pedido.css">
+  <script src="./cuenta-local.js" defer></script>
+  <script src="./pedido-local.js" defer></script>
+  <script src="./preferencias-notificaciones.js" defer></script>
+  <script src="./pedidos-confirmados.js" defer></script>
+  <script src="./trayecto-entrega.js" defer></script>
+  <script src="./estado-pedido.js" defer blocking="render"></script>
+</head>
+<body class="marco-ham pagina-inicio pagina-seguimiento">
+  <main data-node-id="428:80">
+    <header class="encabezado-seguimiento">
+      <a href="./inicio.html" id="volver-seguimiento" aria-label="Volver al establecimiento"><img src="./assets/pedido-volver.svg" alt=""></a>
+      <h1>Estado del pedido</h1>
+    </header>
+    <p id="pedido-no-disponible" hidden>Este pedido no está disponible en esta sesión.</p>
+    <div id="pedido-seguimiento" hidden>
+      <section class="estado-destacado" aria-labelledby="titulo-estado" aria-live="polite">
+        <img class="ovalo-estado" src="./assets/pedido-ovalo.svg" alt="">
+        <p id="folio-estado"></p>
+        <h2 id="titulo-estado"></h2>
+        <p id="mensaje-estado"></p>
+        <div class="pildora-estado"><img id="icono-estado" alt=""><strong id="etiqueta-estado"></strong></div>
+      </section>
+
+      <section class="tarjeta-seguimiento progreso-pedido" id="progreso-pedido" aria-labelledby="titulo-progreso">
+        <h2 id="titulo-progreso">Así va tu pedido</h2>
+        <p id="etapa-actual"></p>
+        <ol id="etapas-seguimiento"></ol>
+        <div class="aviso-etapa">
+          <img src="./assets/pedido-reloj.svg" alt="">
+          <div><h3 id="aviso-etapa-titulo"></h3><p id="aviso-etapa-texto"></p></div>
+        </div>
+      </section>
+
+      <section class="tarjeta-seguimiento resumen-seguimiento" aria-label="Resumen del pedido">
+        <img id="foto-pedido" alt="">
+        <div>
+          <p id="negocios-pedido"></p>
+          <ul id="productos-seguimiento"></ul>
+          <p id="importe-seguimiento"></p>
+        </div>
+      </section>
+
+      <section class="tarjeta-seguimiento recepcion-seguimiento" aria-labelledby="titulo-recepcion">
+        <span><img src="./assets/direccion-pin.svg" alt=""></span>
+        <div><h2 id="titulo-recepcion"></h2><p id="ubicacion-recepcion"></p></div>
+      </section>
+
+      <div id="opciones-seguimiento-entrega" hidden>
+        <section class="tarjeta-seguimiento dato-entrega" aria-labelledby="titulo-tiempo-entrega">
+          <h2 id="titulo-tiempo-entrega">Llegada</h2>
+          <p id="tiempo-entrega" role="status">Tiempo estimado pendiente</p>
+        </section>
+        <section class="tarjeta-seguimiento dato-entrega" id="tarjeta-repartidor" aria-labelledby="titulo-repartidor" hidden>
+          <h2 id="titulo-repartidor">Repartidor</h2>
+          <div class="perfil-repartidor">
+            <img id="foto-repartidor" alt="" hidden>
+            <p id="nombre-repartidor"></p>
+            <p id="transporte-repartidor" hidden><img src="./assets/carrito-entrega.svg" alt=""> <span></span></p>
+            <button type="button" id="contactar-repartidor" hidden>Contactar</button>
+          </div>
+        </section>
+        <section class="tarjeta-seguimiento dato-entrega" id="tarjeta-trayecto" aria-labelledby="titulo-trayecto" hidden>
+          <h2 id="titulo-trayecto">Trayecto de entrega</h2>
+          <div id="trayecto-entrega">
+            <div id="mapa-entrega" aria-label="Mapa de entrega" hidden></div>
+            <p id="aviso-trayecto" role="status"></p>
+          </div>
+        </section>
+      </div>
+
+      <button class="accion-seguimiento" id="abrir-detalle-pedido" type="button" aria-haspopup="dialog">
+        <img src="./assets/pedido-recibo.svg" alt="">Ver detalle del pedido
+      </button>
+    </div>
+  </main>
+  <dialog class="panel-seguimiento" id="detalle-pedido" aria-labelledby="titulo-detalle-pedido">
+    <h2 id="titulo-detalle-pedido"></h2>
+    <p id="metodo-detalle"></p>
+    <ul id="lineas-detalle-pedido"></ul>
+    <p id="ubicacion-detalle"></p>
+    <p>Subtotal <strong id="subtotal-detalle"></strong></p>
+    <p id="fila-descuento-detalle" hidden><span id="etiqueta-descuento-detalle">Descuento</span> <strong id="descuento-detalle"></strong></p>
+    <p>Total <strong id="total-detalle"></strong></p>
+    <button class="accion-seguimiento" type="button" data-cerrar-panel>Volver al seguimiento</button>
+  </dialog>
+  <p id="aviso-estado-pedido" class="aviso-estado-pedido" role="status"></p>
+</body>
+</html>

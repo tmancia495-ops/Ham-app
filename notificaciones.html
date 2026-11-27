@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script src="./transiciones-ham.js"></script>
+  <meta charset="utf-8">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/ham-icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/ham-icon-180.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Ham!">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#410102">
+  <title>Notificaciones · Ham!</title>
+  <link rel="stylesheet" href="./iniciar-sesion.css">
+  <link rel="stylesheet" href="./inicio.css">
+  <link rel="stylesheet" href="./busqueda.css">
+  <link rel="stylesheet" href="./marco-ham.css">
+  <link rel="stylesheet" href="./notificaciones.css">
+  <script src="./cuenta-local.js" defer></script>
+  <script src="./preferencias-notificaciones.js" defer></script>
+  <script src="./comercio-local.js" defer></script>
+  <script src="./barra-ham.js" defer></script>
+  <script src="./notificaciones.js" defer blocking="render"></script>
+</head>
+<body class="marco-ham pagina-inicio pagina-notificaciones ham-cabecera-ilustrada">
+  <main class="inicio preferencias-notificaciones ham-contenido-cabecera" hidden>
+    <header class="cabecera-notificaciones">
+      <a href="./inicio.html#perfil" data-regreso-cabecera aria-label="Volver a Perfil"><img src="./assets/notificaciones-volver.svg" alt="" width="28" height="27"></a>
+      <h1>Notificaciones</h1>
+      <p>Elige qué novedades quieres recibir.</p>
+      <span class="campana-notificaciones" aria-hidden="true"><img src="./assets/notificaciones-campana.svg" alt="" width="24" height="24"></span>
+    </header>
+    <div class="grupos-notificaciones">
+      <section aria-labelledby="actividad-notificaciones">
+        <h2 id="actividad-notificaciones">Actividad</h2>
+        <div id="preferencias-actividad"></div>
+      </section>
+      <section aria-labelledby="novedades-notificaciones">
+        <h2 id="novedades-notificaciones">Promociones y novedades</h2>
+        <div id="preferencias-novedades"></div>
+      </section>
+      <p class="pie-notificaciones">Puedes cambiar estas preferencias cuando quieras.</p>
+      <p role="status" id="error-preferencias"></p>
+    </div>
+  </main>
+  <nav class="barra-inicio" aria-label="Navegación" data-barra-ham="notificaciones" hidden></nav>
+  <template id="tarjeta-preferencia">
+    <button class="tarjeta-preferencia" type="button" role="switch" aria-checked="false">
+      <span class="icono-preferencia" aria-hidden="true"><img width="24" height="24" alt=""></span>
+      <span class="texto-preferencia"><strong></strong><span></span></span>
+      <span class="interruptor-preferencia" aria-hidden="true"></span>
+    </button>
+  </template>
+</body>
+</html>

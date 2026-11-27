@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script src="./transiciones-ham.js"></script>
+  <script>
+    if (location.hash === "#arranque") document.documentElement.classList.add("arranque-ham", "splash-activo");
+  </script>
+  <meta charset="UTF-8">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/ham-icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/ham-icon-180.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Ham!">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#410102">
+  <title>Inicia sesión · Ham!</title>
+  <link rel="stylesheet" href="./iniciar-sesion.css">
+  <script src="./cuenta-local.js" defer></script>
+  <script src="./recuperacion-demo.js" defer></script>
+  <script src="./recuperacion.js" defer></script>
+  <script src="./iniciar-sesion.js" defer></script>
+  <link rel="stylesheet" href="./marco-ham.css">
+  <link rel="stylesheet" href="./recuperacion.css">
+  <link rel="stylesheet" href="./splash.css">
+  <script src="./splash.js" defer></script>
+</head>
+<body class="marco-ham">
+  <img class="splash__image" src="./assets/splash-fondo.png" alt=""
+           width="1206" height="2622" fetchpriority="high" data-node-id="418:84">
+  <main class="splash" hidden data-node-id="2:806">
+    <!-- El mismo destino se usa para el toque y para la transición automática. -->
+    <a class="splash__link" href="./iniciar-sesion.html" aria-label="Ham! Pedí, Esperá y Disfrutá! Ir a Iniciar sesión">
+      
+      <div class="splash__primer-plano" aria-hidden="true">
+        <div class="splash__escena splash__escena--pedi">
+          <div class="splash__palabra"><span style="--letra: 0">P</span><span style="--letra: 1">E</span><span style="--letra: 2">D</span><span style="--letra: 3">Í</span></div>
+        </div>
+        <div class="splash__escena splash__escena--espera">
+          <div class="splash__palabra"><span style="--letra: 0"><b class="splash__glitch">E</b></span><span style="--letra: 1">S</span><span style="--letra: 2"><b class="splash__glitch">P</b></span><span style="--letra: 3">E</span><span style="--letra: 4"><b class="splash__glitch">R</b></span><span style="--letra: 5">Á</span></div>
+        </div>
+        <div class="splash__escena splash__escena--disfruta">
+          <div class="splash__conjuncion"><span style="--letra: 0">Y</span></div>
+          <div class="splash__palabra"><span style="--letra: 0">D</span><span style="--letra: 1">I</span><span style="--letra: 2">S</span><span style="--letra: 3">F</span><span style="--letra: 4">R</span><span style="--letra: 5">U</span><span style="--letra: 6">T</span><span style="--letra: 7">Á</span><span style="--letra: 8">!</span></div>
+        </div>
+        <div class="splash__cierre">
+          <svg class="splash__logo" width="355" height="164" viewBox="0 0 355 164" fill="#F5F0EA" aria-hidden="true" data-node-id="180:158">
+            <path class="splash__logo-h" d="M70.683 131.067C66.6821 131.067 63.837 130.489 62.1477 129.333C60.4585 128.088 59.436 126.533 59.0804 124.665C58.7247 122.709 58.5469 120.753 58.5469 118.797V49.9815C58.5469 48.0255 58.7247 46.1139 59.0804 44.2468C59.436 42.3797 60.4585 40.8682 62.1477 39.7124C63.837 38.4677 66.7266 37.8453 70.8164 37.8453C74.9062 37.8453 77.7514 38.4677 79.3517 39.7124C81.041 40.8682 82.0635 42.3797 82.4191 44.2468C82.7747 46.1139 82.9526 48.0699 82.9526 50.1148V118.931C82.9526 120.887 82.7747 122.798 82.4191 124.665C82.0635 126.533 81.041 128.088 79.3517 129.333C77.6624 130.489 74.7729 131.067 70.683 131.067ZM15.8703 131.067C11.8694 131.067 9.02431 130.489 7.33503 129.333C5.64575 128.088 4.62329 126.533 4.26766 124.665C3.91202 122.709 3.7342 120.753 3.7342 118.797V49.9815C3.7342 48.0255 3.91202 46.1139 4.26766 44.2468C4.62329 42.3797 5.64575 40.8682 7.33503 39.7124C9.02431 38.4677 11.9139 37.8453 16.0037 37.8453C20.0935 37.8453 22.9386 38.4677 24.539 39.7124C26.2283 40.8682 27.2508 42.3797 27.6064 44.2468C27.962 46.1139 28.1399 48.0699 28.1399 50.1148V118.931C28.1399 120.887 27.962 122.798 27.6064 124.665C27.2508 126.533 26.2283 128.088 24.539 129.333C22.8497 130.489 19.9602 131.067 15.8703 131.067ZM26.006 94.9252V74.1204H60.6807V94.9252H26.006Z"/>
+            <path class="splash__logo-a" d="M142.218 130.934C138.217 130.934 135.239 130.267 133.283 128.933C131.416 127.599 130.527 126.088 130.616 124.399H132.483C132.038 125.021 131.149 125.866 129.815 126.933C128.571 127.911 126.881 128.844 124.748 129.733C122.614 130.533 119.991 130.934 116.879 130.934C112.878 130.934 109.011 130.044 105.276 128.266C101.631 126.399 98.3415 123.865 95.4075 120.665C92.5624 117.464 90.2952 113.863 88.6059 109.862C86.9167 105.772 86.072 101.505 86.072 97.059C86.072 92.7025 86.9167 88.5237 88.6059 84.5228C90.2952 80.5219 92.6069 76.9655 95.5409 73.8537C98.4749 70.6529 101.765 68.1635 105.41 66.3853C109.055 64.5182 112.878 63.5846 116.879 63.5846C119.902 63.5846 122.436 64.0292 124.481 64.9183C126.615 65.8074 128.304 66.7854 129.549 67.8523C130.882 68.9192 131.771 69.8083 132.216 70.5196H130.749C130.66 68.2968 131.549 66.5631 133.416 65.3183C135.372 64.0736 138.351 63.4512 142.352 63.4512C146.353 63.4512 149.153 64.0736 150.754 65.3183C152.443 66.4742 153.465 67.9856 153.821 69.8527C154.177 71.7198 154.355 73.6314 154.355 75.5874V118.931C154.355 120.887 154.177 122.798 153.821 124.665C153.465 126.533 152.443 128.044 150.754 129.2C149.153 130.356 146.308 130.934 142.218 130.934ZM120.213 106.795C121.903 106.795 123.414 106.35 124.748 105.461C126.17 104.572 127.282 103.416 128.082 101.994C128.971 100.482 129.415 98.8817 129.415 97.1924C129.415 95.4142 128.971 93.8138 128.082 92.3913C127.282 90.9687 126.17 89.8129 124.748 88.9238C123.325 88.0347 121.725 87.5902 119.947 87.5902C118.168 87.5902 116.524 88.0347 115.012 88.9238C113.59 89.8129 112.434 91.0132 111.545 92.5247C110.656 93.9472 110.211 95.5476 110.211 97.3258C110.211 99.015 110.656 100.571 111.545 101.994C112.523 103.416 113.767 104.572 115.279 105.461C116.79 106.35 118.435 106.795 120.213 106.795Z"/>
+            <path class="splash__logo-m" d="M171.377 131.2C167.376 131.2 164.531 130.622 162.842 129.467C161.153 128.222 160.13 126.666 159.775 124.799C159.508 122.932 159.374 121.02 159.374 119.064V75.454C159.374 73.4091 159.552 71.4976 159.908 69.7194C160.264 67.8523 161.286 66.3408 162.975 65.185C164.665 64.0292 167.554 63.4512 171.644 63.4512C175.645 63.4512 178.534 64.2514 180.313 65.8518C182.18 67.3633 183.113 69.8527 183.113 73.3202L180.846 72.6534C180.846 72.6534 181.157 72.2088 181.78 71.3197C182.491 70.3417 183.469 69.2304 184.714 67.9856C186.047 66.7409 187.648 65.674 189.515 64.7849C191.382 63.8069 193.516 63.3179 195.916 63.3179C198.672 63.3179 201.206 63.6735 203.518 64.3848C205.83 65.0961 207.919 66.2074 209.786 67.7189C211.742 69.1415 213.431 70.9196 214.854 73.0535C215.832 71.8977 217.166 70.564 218.855 69.0525C220.544 67.5411 222.545 66.2074 224.856 65.0516C227.257 63.8958 229.924 63.3179 232.858 63.3179C238.104 63.3179 242.549 64.6515 246.195 67.3188C249.929 69.9861 252.729 73.8537 254.596 78.9215C256.552 83.9893 257.531 90.1241 257.531 97.3258V119.064C257.531 121.02 257.353 122.932 256.997 124.799C256.641 126.666 255.619 128.222 253.93 129.467C252.24 130.622 249.351 131.2 245.261 131.2C241.26 131.2 238.415 130.578 236.726 129.333C235.036 128.088 234.014 126.533 233.658 124.665C233.392 122.798 233.258 120.887 233.258 118.931V97.1924C233.258 95.0586 232.991 93.3248 232.458 91.9912C232.013 90.5686 231.302 89.5017 230.324 88.7905C229.435 88.0792 228.279 87.7235 226.857 87.7235C225.345 87.7235 224.101 88.0347 223.123 88.6571C222.233 89.2795 221.567 90.3019 221.122 91.7245C220.766 93.0581 220.589 94.9252 220.589 97.3258V119.064C220.589 121.02 220.411 122.932 220.055 124.799C219.7 126.666 218.677 128.222 216.988 129.467C215.298 130.622 212.409 131.2 208.319 131.2C204.318 131.2 201.473 130.578 199.784 129.333C198.095 128.088 197.072 126.533 196.716 124.665C196.45 122.798 196.316 120.887 196.316 118.931V97.1924C196.316 95.0586 196.094 93.2804 195.65 91.8578C195.205 90.4353 194.494 89.4128 193.516 88.7905C192.627 88.0792 191.426 87.7235 189.915 87.7235C188.137 87.7235 186.803 88.1681 185.914 89.0572C185.025 89.9463 184.402 91.1021 184.047 92.5247C183.78 93.9472 183.647 95.5031 183.647 97.1924V119.197C183.647 121.154 183.469 123.065 183.113 124.932C182.758 126.799 181.735 128.311 180.046 129.467C178.357 130.622 175.467 131.2 171.377 131.2Z"/>
+            <path class="splash__logo-signo" d="M287.043 98.5803C283.291 97.1912 280.802 95.7007 279.575 94.1088C278.348 92.5169 277.836 90.9053 278.038 89.2738C278.27 87.5586 278.684 85.8632 279.279 84.1876L292.453 47.1163C293.048 45.4407 293.796 43.8688 294.695 42.4006C295.594 40.9323 297.014 39.9887 298.956 39.5699C300.927 39.0674 303.83 39.5261 307.666 40.9461C311.501 42.3661 313.976 43.8985 315.089 45.5433C316.316 47.1351 316.799 48.8306 316.537 50.6296C316.305 52.3448 315.891 54.0402 315.296 55.7158L302.122 92.7871C301.527 94.4627 300.779 96.0346 299.88 97.5028C299.011 98.8874 297.605 99.789 295.664 100.208C293.752 100.543 290.879 100 287.043 98.5803ZM276.058 129.494C271.222 127.704 268.339 125.594 267.41 123.164C266.511 120.651 266.835 117.216 268.383 112.859C269.038 111.016 269.86 109.235 270.848 107.515C271.92 105.826 273.498 104.704 275.583 104.149C277.697 103.51 280.755 103.931 284.757 105.413C289.676 107.234 292.559 109.344 293.405 111.743C294.251 114.141 293.885 117.561 292.307 122.001C291.652 123.844 290.83 125.626 289.842 127.345C288.853 129.065 287.302 130.244 285.188 130.883C283.103 131.439 280.06 130.976 276.058 129.494Z"/>
+          </svg>
+
+        </div>
+      </div>
+    </a>
+    <p class="sr-only" role="status">Cargando Ham!</p>
+  </main>
+  <main class="acceso" id="acceso-ham" data-node-id="413:140">
+    <header class="bienvenida">
+      <p class="marca">Ham!</p>
+      <p class="saludo">¡Qué gusto verte!</p>
+      <p>Tus antojos te estaban esperando.</p>
+    </header>
+
+    <section class="tarjeta" aria-labelledby="titulo-acceso">
+      <h1 id="titulo-acceso">Inicia sesión</h1>
+      <p class="introduccion">Ingresa tus datos para continuar en Ham!.</p>
+
+      <form id="formulario-acceso">
+        <div class="campo">
+          <label for="correo">Correo electrónico</label>
+          <input id="correo" type="email" autocomplete="username" placeholder="nombre@correo.com" required>
+        </div>
+
+        <div class="campo">
+          <label for="contrasena">Contraseña</label>
+          <div class="campo-contrasena">
+            <input id="contrasena" type="password" autocomplete="current-password" placeholder="••••••••" required>
+            <button id="mostrar-contrasena" type="button" aria-controls="contrasena" hidden>Mostrar</button>
+          </div>
+        </div>
+
+        <button id="recuperar" class="recuperar" type="button" disabled>¿Olvidaste tu contraseña?</button>
+
+        <label class="recordar">
+          <input type="checkbox" id="recordar-sesion">
+          Mantener sesión iniciada
+        </label>
+
+        <button class="enviar" type="submit" disabled>Iniciar sesión</button>
+        <p id="estado-acceso" role="status"></p>
+      </form>
+    </section>
+
+    <footer class="registro">
+      <span>¿No tienes cuenta?</span>
+      <a href="./crear-cuenta.html">Regístrate</a>
+    </footer>
+  </main>
+  <main class="vista-recuperacion" data-paso-recuperacion="recuperar" data-node-id="422:80" hidden>
+    <header>
+      <button type="button" class="volver-recuperacion" data-volver-recuperacion aria-label="Volver"><img src="./assets/recuperacion-flecha-correo.svg" width="23" height="23" alt=""></button>
+      <p class="marca-recuperacion">Ham!</p>
+      <h1 tabindex="-1">¿Olvidaste tu contraseña?</h1>
+      <p>Recupera tu acceso a Ham!.</p>
+    </header>
+    <section class="tarjeta-recuperacion">
+      <span class="icono-recuperacion"><img src="./assets/notificaciones-correos.svg" width="24" height="24" alt=""></span>
+      <h2>Revisa tu correo</h2>
+      <p class="detalle-recuperacion">Ingresa el correo asociado a tu cuenta. En esta demostración se genera un código local.</p>
+      
+      <form id="form-recuperar" novalidate>
+          <label for="correo-recuperacion">Correo electrónico</label>
+          <input id="correo-recuperacion" type="email" autocomplete="email" placeholder="nombre@correo.com" required aria-describedby="error-recuperar">
+          <p id="error-recuperar" class="error-recuperacion" role="alert"></p>
+          <p class="nota-recuperacion"><img src="./assets/recuperacion-escudo-correo.svg" width="20" height="20" alt=""> <span>DEMO · El código se muestra en pantalla. No se envía correo.</span></p>
+          <button type="submit" class="boton-recuperacion">Enviar código</button>
+      </form>
+    </section>
+    <a class="salir-recuperacion" href="./iniciar-sesion.html">Volver a iniciar sesión</a>
+  </main>
+  <main class="vista-recuperacion" data-paso-recuperacion="verificar" data-node-id="422:124" hidden>
+    <header>
+      <button type="button" class="volver-recuperacion" data-volver-recuperacion aria-label="Volver"><img src="./assets/recuperacion-flecha-codigo.svg" width="23" height="23" alt=""></button>
+      <p class="marca-recuperacion">Ham!</p>
+      <h1 tabindex="-1">Verificar código</h1>
+      <p>Consulta tu código de prueba para continuar.</p>
+    </header>
+    <section class="tarjeta-recuperacion">
+      <span class="icono-recuperacion"><img src="./assets/recuperacion-escudo-codigo.svg" width="24" height="24" alt=""></span>
+      <h2>Verifica tu identidad</h2>
+      <p class="detalle-recuperacion">Escribe el código de 6 dígitos de la demostración.</p>
+      <p id="codigo-demo-visible" class="codigo-demo-visible" role="status"></p>
+      <form id="form-verificar" novalidate>
+          <p id="etiqueta-otp">Código de verificación</p>
+          <div class="casillas-otp" role="group" aria-labelledby="etiqueta-otp">
+            <input type="text" inputmode="numeric" autocomplete="one-time-code" placeholder="–" aria-label="Dígito 1 de 6" aria-describedby="error-verificar">
+            <input type="text" inputmode="numeric" autocomplete="off" placeholder="–" aria-label="Dígito 2 de 6" aria-describedby="error-verificar">
+            <input type="text" inputmode="numeric" autocomplete="off" placeholder="–" aria-label="Dígito 3 de 6" aria-describedby="error-verificar">
+            <input type="text" inputmode="numeric" autocomplete="off" placeholder="–" aria-label="Dígito 4 de 6" aria-describedby="error-verificar">
+            <input type="text" inputmode="numeric" autocomplete="off" placeholder="–" aria-label="Dígito 5 de 6" aria-describedby="error-verificar">
+            <input type="text" inputmode="numeric" autocomplete="off" placeholder="–" aria-label="Dígito 6 de 6" aria-describedby="error-verificar">
+          </div>
+          <p id="error-verificar" class="error-recuperacion" role="alert"></p>
+          <p class="reenviar-recuperacion"><span>¿No recibiste el correo?</span> <button type="button" id="reenviar-recuperacion">Reenviar código</button></p>
+          <p class="spam-recuperacion">Revisa también la carpeta de spam.</p>
+          <button type="submit" class="boton-recuperacion">Verificar código</button>
+      </form>
+    </section>
+    <a class="salir-recuperacion" href="./iniciar-sesion.html">Volver a iniciar sesión</a>
+  </main>
+  <main class="vista-recuperacion" data-paso-recuperacion="restablecer" data-node-id="422:176" hidden>
+    <header>
+      <button type="button" class="volver-recuperacion" data-volver-recuperacion aria-label="Volver"><img src="./assets/recuperacion-flecha-clave.svg" width="23" height="23" alt=""></button>
+      <p class="marca-recuperacion">Ham!</p>
+      <h1 tabindex="-1">Restablecer contraseña</h1>
+      <p>DEMO · Este paso no cambia tu contraseña.</p>
+    </header>
+    <section class="tarjeta-recuperacion">
+      <span class="icono-recuperacion"><img src="./assets/recuperacion-candado.svg" width="24" height="24" alt=""></span>
+      <h2>Nueva contraseña</h2>
+      <p class="detalle-recuperacion">Elige una contraseña segura que no hayas utilizado anteriormente.</p>
+      
+      <form id="form-restablecer" novalidate>
+          <div class="campo-clave-recuperacion">
+            <label for="clave-nueva">Nueva contraseña</label>
+            <div><input type="password" id="clave-nueva" autocomplete="new-password" placeholder="Mínimo 8 caracteres" required aria-describedby="error-clave-nueva"><button type="button" data-mostrar-clave aria-controls="clave-nueva" aria-pressed="false">Mostrar</button></div>
+            <p class="error-recuperacion" id="error-clave-nueva" role="alert"></p>
+          </div>
+          <div class="campo-clave-recuperacion">
+            <label for="confirmar-clave-nueva">Confirmar contraseña</label>
+            <div><input type="password" id="confirmar-clave-nueva" autocomplete="new-password" placeholder="Repite tu contraseña" required aria-describedby="error-confirmar-clave-nueva"><button type="button" data-mostrar-clave aria-controls="confirmar-clave-nueva" aria-pressed="false">Mostrar</button></div>
+            <p class="error-recuperacion" id="error-confirmar-clave-nueva" role="alert"></p>
+          </div>
+          <p class="nota-clave"><img src="./assets/recuperacion-check.svg" width="16" height="16" alt=""> Usa al menos 8 caracteres.</p>
+          <p id="error-restablecer" class="error-recuperacion" role="alert"></p>
+          <button type="submit" class="boton-recuperacion">Restablecer contraseña</button>
+      </form>
+    </section>
+    <a class="salir-recuperacion" href="./iniciar-sesion.html">Volver a iniciar sesión</a>
+  </main>
+</body>
+</html>

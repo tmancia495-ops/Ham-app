@@ -1,0 +1,153 @@
+.marco-ham.pagina-negocio > .negocio {
+  padding: 24px 16px 16px;
+  overflow-x: hidden;
+}
+
+.cabecera-negocio {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  align-items: center;
+  min-height: 39px;
+  margin-bottom: 16px;
+}
+
+.cabecera-negocio h1 { font: 700 32px/39px 'Fredoka Bold', Fredoka, system-ui, sans-serif; letter-spacing: -.64px; }
+.cabecera-negocio a { display: grid; place-items: center; justify-self: start; width: 32px; height: 39px; }
+.negocio-notificaciones { display: block; margin-right: 10px; }
+
+.direccion-negocio {
+  display: grid;
+  grid-template-columns: 23px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 63px;
+  padding: 8px 14px;
+  border-radius: 15px;
+  background: #d9c8c2;
+}
+
+.direccion-negocio .ubicacion { width: 22px; height: 22px; align-self: start; margin-top: 5px; }
+.direccion-negocio h2, .direccion-negocio p { margin: 0; font-weight: 500; line-height: 22px; letter-spacing: .45px; }
+.direccion-negocio h2 { font-size: 14px; }
+.direccion-negocio p { font-size: 12.67px; overflow-wrap: anywhere; }
+
+.promocion-negocio {
+  position: relative;
+  height: 170px;
+  margin-top: 25px;
+  border-radius: 10px;
+  background: #5c170b;
+  color: var(--crema);
+}
+
+.promocion-negocio h2 {
+  position: absolute;
+  z-index: 1;
+  top: 14px;
+  left: 27px;
+  margin: 0;
+  font-size: 48px;
+  line-height: 50px;
+  font-weight: 500;
+  letter-spacing: .185px;
+}
+
+.promocion-negocio strong { display: block; font-family: 'Fredoka Bold', Fredoka, system-ui, sans-serif; }
+.arte-promocion { position: absolute; right: 23px; bottom: 0; width: 49.46%; height: 147px; overflow: hidden; }
+.arte-promocion img { position: absolute; top: -62.21%; left: 0; width: 100%; height: 162.23%; }
+#comprar-promocion { position: absolute; bottom: 10px; left: 27px; height: 21px; padding: 0 8px; border: 1px solid var(--crema); border-radius: 13px; font-size: 10.92px; font-weight: 500; }
+
+#menu-negocio {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 161.314px));
+  justify-content: space-between;
+  gap: 12.837px clamp(10px, calc(100vw - 354px), 32.686px);
+  margin: 37px 9.686px 0 5px;
+  padding: 0;
+  list-style: none;
+}
+
+#menu-negocio > li { min-width: 0; }
+
+.tarjeta-producto {
+  display: block;
+  width: 100%;
+  height: 210.163px;
+  padding: 4.54px 5.68px;
+  border-radius: 17.04px;
+  background: var(--vino);
+  color: var(--crema);
+  text-align: left;
+  text-decoration: none;
+}
+
+.foto-producto { display: block; height: 153.362px; border-radius: 17.04px; background: #5c170b; text-align: center; }
+.recorte-producto { position: relative; display: block; height: 143.138px; overflow: hidden; border-radius: inherit; }
+.recorte-producto img { position: absolute; top: var(--recorte-foto); left: 0; width: 100%; height: 131.54%; object-fit: cover; }
+.foto-producto small { display: block; font-size: 5.68px; font-weight: 300; line-height: 10px; }
+.datos-producto { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; min-height: 43px; padding-top: 5px; }
+.texto-producto strong { display: block; font-size: 18.176px; line-height: 18px; font-weight: 500; letter-spacing: .31px; }
+.descripcion-producto { display: block; margin-top: 5px; font-size: 5.68px; line-height: 6.33px; letter-spacing: .132px; }
+.precio-producto { display: grid; place-items: center; min-height: 35px; padding-left: 3px; border-left: 1px solid #5c170b; font-size: 14.618px; font-weight: 500; white-space: nowrap; }
+
+#aviso-negocio:not(:empty) {
+  position: absolute;
+  z-index: 2;
+  inset: auto 16px calc(var(--alto-barra-inicio) + 8px);
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--crema);
+  color: var(--rojo);
+  box-shadow: 0 2px 10px #41010233;
+  font-size: 13px;
+}
+
+@media (max-width: 370px) {
+  .promocion-negocio h2 { left: 18px; font-size: 43px; }
+  #comprar-promocion { left: 18px; }
+  .texto-producto strong { font-size: 15px; }
+  .precio-producto { font-size: 12px; }
+}
+
+.recorte-producto img.foto-card-catalogo {
+  width: var(--foto-ancho);
+  height: var(--foto-alto);
+  left: var(--foto-izquierda);
+}
+
+.promocion-estatica {
+  width: calc(100% - 20px);
+  max-width: 350px;
+  margin: 23px auto 0;
+  overflow: clip;
+}
+
+.promocion-estatica p {
+  width: 171px;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: .2px;
+}
+
+.promocion-estatica .comprar {
+  display: grid;
+  place-items: center;
+  bottom: 11px;
+  width: 67px;
+  height: 24px;
+  padding: 0;
+  font-size: 8.577px;
+  font-weight: 500;
+  letter-spacing: .1715px;
+  opacity: 1;
+}
+
+.promocion-estatica + #menu-negocio { margin-top: 18px; }
+.negocio[data-negocio-id="rest-002"] #menu-negocio { margin-right: 7.686px; }
+
+/* Recorta las fotos sin crear contenedores desplazables dentro del catálogo. */
+.negocio[data-negocio-id="rest-002"] .recorte-producto { overflow: clip; }
+
+.negocio:is([data-negocio-id="rest-004"], [data-negocio-id="rest-005"]) #menu-negocio { margin-top: 23px; margin-right: 7.686px; row-gap: 12.2px; }
+.negocio:is([data-negocio-id="rest-004"], [data-negocio-id="rest-005"]) .recorte-producto { overflow: clip; }
+.negocio:is([data-negocio-id="rest-004"], [data-negocio-id="rest-005"]) .texto-producto strong { overflow-wrap: anywhere; }

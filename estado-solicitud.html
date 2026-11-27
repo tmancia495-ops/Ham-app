@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/ham-icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/ham-icon-180.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Ham!">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Estado de solicitud · Ham!</title>
+  <script src="./transiciones-ham.js"></script>
+  <link rel="stylesheet" href="./iniciar-sesion.css">
+  <link rel="stylesheet" href="./inicio.css">
+  <link rel="stylesheet" href="./busqueda.css">
+  <link rel="stylesheet" href="./marco-ham.css">
+  <link rel="stylesheet" href="./estado-solicitud.css">
+  <script src="./cuenta-local.js" defer></script>
+  <script src="./comercio-local.js" defer></script>
+  <script src="./barra-ham.js" defer></script>
+  <script src="./estado-solicitud.js" defer blocking="render"></script>
+</head>
+<body class="marco-ham pagina-inicio ham-cabecera-ilustrada pagina-estado-solicitud">
+  <main class="inicio ham-contenido-cabecera" hidden>
+    <header class="cabecera-estado-solicitud">
+      <a href="./inicio.html#perfil" data-regreso-cabecera aria-label="Volver al perfil"><img src="./assets/solicitud-volver.svg" alt=""></a>
+      <h1 id="titulo-estado-solicitud">Estado de solicitud</h1>
+      <strong id="saludo-estado-solicitud">¡Ya falta poquito!</strong>
+      <p id="introduccion-estado-solicitud">Estamos revisando los datos de tu solicitud.</p>
+    </header>
+    <div class="cuerpo-estado-solicitud">
+      <div class="insignias-estado-solicitud">
+        <strong id="insignia-estado-solicitud">◷ EN REVISIÓN</strong>
+        <strong id="tipo-estado-solicitud"></strong>
+      </div>
+      <div id="revision-solicitud">
+        <section class="tarjeta-estado-solicitud tarjeta-revision">
+          <span class="reloj-solicitud"><img src="./assets/solicitud-reloj.svg" alt=""></span>
+          <time id="cronometro-solicitud">03:00</time>
+          <strong>Tiempo estimado de revisión</strong>
+          <p id="mensaje-revision"></p>
+        </section>
+        <section class="tarjeta-estado-solicitud progreso-solicitud" aria-label="Estado de tu solicitud">
+          <strong>ESTADO DE TU SOLICITUD</strong>
+          <ol>
+            <li><img src="./assets/solicitud-recibida.svg" alt="">Recibida</li>
+            <li aria-current="step"><span>2</span>En revisión</li>
+            <li><img src="./assets/solicitud-etapa-aprobada.svg" alt="">Aprobada</li>
+          </ol>
+        </section>
+        <p class="nota-estado-solicitud">La aprobación automática es una demostración de Ham!.</p>
+      </div>
+      <div id="aprobada-solicitud" hidden>
+        <section class="tarjeta-estado-solicitud tarjeta-aprobada">
+          <span class="insignia-confirmada"><img src="./assets/solicitud-aprobada.svg" alt=""></span>
+          <h2 id="mensaje-aprobada"></h2>
+          <p id="detalle-aprobada"></p>
+          <strong>✓ CUENTA ACTIVA</strong>
+        </section>
+        <section class="tarjeta-estado-solicitud siguiente-solicitud">
+          <h2>¿Qué sigue?</h2>
+          <p id="detalle-siguiente-solicitud"></p>
+        </section>
+      </div>
+      <p id="error-estado-solicitud" role="status" hidden></p>
+      <footer class="acciones-estado-solicitud">
+        <a id="volver-estado-solicitud" href="./inicio.html#perfil" data-regreso-cabecera>Volver al perfil</a>
+        <button id="aprobar-solicitud" type="button">Aprobar</button>
+        <a id="entrar-rol-solicitud" href="./inicio.html#perfil" hidden></a>
+      </footer>
+    </div>
+  </main>
+  <nav class="barra-inicio" aria-label="Navegación" data-barra-ham="estado-solicitud" hidden></nav>
+</body>
+</html>

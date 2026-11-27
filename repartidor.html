@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script src="./transiciones-ham.js"></script>
+  <meta charset="utf-8">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/ham-icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/ham-icon-180.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Ham!">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <meta name="theme-color" content="#410102">
+  <title>Quiero ser repartidor · Ham!</title>
+  <link rel="stylesheet" href="./iniciar-sesion.css">
+  <link rel="stylesheet" href="./inicio.css">
+  <link rel="stylesheet" href="./busqueda.css">
+  <link rel="stylesheet" href="./marco-ham.css">
+  <link rel="stylesheet" href="./repartidor.css">
+  <link rel="stylesheet" href="./informacion-legal.css">
+  <script src="./cuenta-local.js" defer></script>
+  <script src="./documentos-legales.js" defer></script>
+  <script src="./documentos-legales/repartidores.js" defer></script>
+  <script src="./lector-legal.js" defer></script>
+  <script src="./config-repartidor.js" defer></script>
+  <script src="./comercio-local.js" defer></script>
+  <script src="./repartidor.js" defer blocking="render"></script>
+</head>
+<body class="marco-ham pagina-inicio pagina-repartidor formulario-rol-ham">
+  <main class="inicio solicitud-repartidor" data-node-id="399:286" hidden>
+    <header class="cabecera-repartidor">
+      <a class="volver-repartidor" href="./inicio.html#perfil" data-regreso-cabecera aria-label="Volver a Perfil">‹</a>
+      <p>Únete a Ham!</p>
+      <h1>Haz entregas con Ham!</h1>
+      <p>Regístrate para repartir pedidos dentro de la UCA.</p>
+    </header>
+    <form class="formulario-repartidor" id="solicitud-repartidor" novalidate>
+      <h2>Solicitud de repartidor</h2>
+      <p class="intro-repartidor">Completa tus datos para que podamos contactarte.</p>
+      <p class="estado-repartidor" id="estado-solicitud" hidden><strong>Pendiente de revisión.</strong> Registro local de demostración.</p>
+      <fieldset id="datos-solicitud">
+        <div class="campo-repartidor">
+          <label for="nombre-repartidor">Nombre completo</label>
+          <input id="nombre-repartidor" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre y apellido" aria-describedby="error-nombre" required>
+          <p id="error-nombre" class="error-repartidor" role="status"></p>
+        </div>
+        <div class="campo-repartidor">
+          <label for="correo-repartidor">Correo electrónico</label>
+          <input id="correo-repartidor" name="correo" type="email" autocomplete="email" placeholder="nombre@correo.com" aria-describedby="ayuda-correo-repartidor error-correo" required>
+          <p id="ayuda-correo-repartidor" class="ayuda-repartidor">Utiliza tu correo universitario @uca.edu.sv.</p>
+          <p id="error-correo" class="error-repartidor" role="status"></p>
+        </div>
+        <div class="campo-repartidor">
+          <label for="telefono-repartidor">Número de teléfono</label>
+          <input id="telefono-repartidor" name="telefono" type="tel" autocomplete="tel-national" placeholder="7000 0000" aria-describedby="error-telefono" required>
+          <p id="error-telefono" class="error-repartidor" role="status"></p>
+        </div>
+        <div class="campo-repartidor">
+          <label for="transporte-repartidor">Medio de transporte</label>
+          <select id="transporte-repartidor" name="transporte" aria-describedby="error-transporte" required>
+            <option value="" disabled selected>Selecciona una opción  ⌄</option>
+          </select>
+          <p id="error-transporte" class="error-repartidor" role="status"></p>
+        </div>
+        <fieldset class="disponibilidad-repartidor" aria-describedby="error-disponibilidad">
+          <legend>Disponibilidad</legend>
+          <div>
+            <label><input type="radio" name="disponibilidad" value="manana" required><span>Mañana</span></label>
+            <label><input type="radio" name="disponibilidad" value="tarde" required><span>Tarde</span></label>
+            <label><input type="radio" name="disponibilidad" value="flexible" required><span>Flexible</span></label>
+          </div>
+          <p id="error-disponibilidad" class="error-repartidor" role="status"></p>
+        </fieldset>
+      </fieldset>
+      <button class="boton-repartidor" id="enviar-solicitud" type="submit">Enviar solicitud</button>
+      <p id="error-solicitud" class="error-repartidor" role="status"></p>
+      <div class="pie-repartidor">
+        <p>Solicitud de prueba para este prototipo.</p>
+        <a href="#condiciones" id="abrir-condiciones">Condiciones para repartidores</a>
+      </div>
+    </form>
+  </main>
+  <main class="inicio condiciones-repartidor lector-legal" data-documento-legal="repartidores" data-retorno="./repartidor.html" hidden></main>
+  <dialog class="confirmacion-repartidor" aria-labelledby="titulo-confirmacion" aria-describedby="texto-confirmacion" data-node-id="689:1153">
+    <h2 id="titulo-confirmacion">¡Solicitud registrada en el prototipo!</h2>
+    <p id="texto-confirmacion">Tus datos se guardaron en este navegador para la demostración. Podrás enviarlos para revisión cuando el sistema esté disponible.</p>
+    <form method="dialog"><button class="boton-repartidor" value="entendido">Entendido</button></form>
+  </dialog>
+</body>
+</html>

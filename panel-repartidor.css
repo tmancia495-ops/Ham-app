@@ -1,0 +1,39 @@
+.pagina-inicio.cuenta-repartidor { --alto-barra-inicio: calc(54px + env(safe-area-inset-bottom)); }
+.marco-ham.pagina-inicio > .panel-repartidor { padding: 0; color: #740c03; overflow-x: hidden; }
+.barra-repartidor { border-top: 1px solid #eaddd7; }
+.barra-repartidor::before { content: none; }
+.cabecera-panel-repartidor {
+  min-height: var(--alto-cabecera-ham);
+  padding: 42px 24px 18px;
+  color: #f5f0ea;
+}
+.cabecera-panel-repartidor h1 { margin: 15px 0 6px; font: 700 30px/1.1 'Fredoka Bold', Fredoka, sans-serif; }
+.cabecera-panel-repartidor p { margin: 0; font-size: 14px; }
+.cabecera-panel-repartidor p:first-child { font-size: 12px; font-weight: 600; }
+.cabecera-panel-repartidor small { display: block; margin-top: 28px; text-transform: uppercase; }
+.cuerpo-panel-repartidor { padding: 14px 20px 24px; color: #740c03; }
+.cuerpo-panel-repartidor h2 { margin: 32px 2px 6px; text-transform: uppercase; font-size: 17px; }
+.cuerpo-panel-repartidor h3 { margin: 0; font-size: 20px; }
+.cuerpo-panel-repartidor p { margin: 5px 0; color: #846f6b; font-size: 13px; }
+.cuerpo-panel-repartidor .estado-panel-repartidor { margin: 0 0 14px; color: #740c03; font-weight: 600; }
+.bloque-panel-repartidor { padding: 20px 18px; border-radius: 20px; background: #f3eee7; }
+.bloque-panel-repartidor h3 { margin: 24px 0 12px; font-size: 28px; }
+.pedido-panel-repartidor { display: flow-root; border-left: 5px solid #740c03; border-radius: 3px; margin: 20px 0 14px; padding: 13px 14px 8px 12px; }
+.pedido-panel-repartidor footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px; border-top: 1px solid #eaddd7; margin-top: 10px; padding-top: 10px; font-size: 13px; }
+.pedido-panel-repartidor small { color: #846f6b; }
+.insignia-panel-repartidor { float: right; margin-left: 4px; padding: 6px 9px; border-radius: 18px; background: #f3eee7; font-size: 11px; }
+.cuerpo-panel-repartidor .destino-panel-repartidor { display: flex; align-items: center; gap: 7px; color: #410102; font-weight: 500; }
+.accion-panel-repartidor, .enlace-panel-repartidor { display: block; width: 100%; box-sizing: border-box; border-radius: 16px; margin-top: 12px; padding: 12px 15px; font-weight: 600; text-decoration: none; text-align: center; }
+.accion-panel-repartidor { color: #f5f0ea; background: #740c03; }
+.enlace-panel-repartidor { color: #740c03; background: #f3eee7; }
+.pedido-panel-repartidor .accion-panel-repartidor { width: fit-content; margin-left: auto; margin-top: 4px; padding: 7px 16px; font-size: 12px; }
+.filtros-panel-repartidor { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.filtros-panel-repartidor button { padding: 9px 3px; border-radius: 18px; background: #f3eee7; color: #740c03; }
+.filtros-panel-repartidor button[aria-pressed="true"] { background: #740c03; color: #f5f0ea; }
+.jornada-panel-repartidor { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 9px; }
+.interruptor-panel-repartidor { display: flex; align-items: center; flex: 0 0 65px; height: 34px; padding: 4px; border-radius: 20px; background: #eaddd7; }
+.interruptor-panel-repartidor[aria-checked="true"] { justify-content: end; background: #740c03; }
+.interruptor-panel-repartidor::before { content: ''; width: 26px; height: 26px; border-radius: 50%; background: white; }
+.actividad-panel-repartidor { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 18px; }
+.actividad-panel-repartidor strong { display: block; margin-bottom: 10px; color: #740c03; font-size: 28px; }
+.perfil-panel-repartidor { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: start; gap: 16px; padding: 17px; }

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script src="./transiciones-ham.js"></script>
+  <meta charset="utf-8">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/ham-icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/ham-icon-180.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Ham!">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f0ea">
+  <title>Inicio provisional · Ham!</title>
+  <link rel="stylesheet" href="./iniciar-sesion.css">
+  <link rel='stylesheet' href='./inicio.css'>
+  <link rel='stylesheet' href='./busqueda.css'>
+  <script src="./cuenta-local.js" defer></script>
+  <script src="./datos-negocios.js" defer></script>
+  <script src="./rutas-negocio.js" defer></script>
+  <script src="./pedidos-confirmados.js" defer></script>
+  <script src="./comercio-local.js" defer></script>
+  <script src="./barra-ham.js" defer></script>
+  <script src="./favoritos-local.js" defer></script>
+  <script src="./datos-inicio.js" defer></script>
+  <script src="./tarjeta-promocional.js" defer></script>
+  <script src="./direcciones.js" defer></script>
+  <script src="./inicio.js" defer blocking="render"></script>
+  <script src="./perfil-usuario.js" defer></script>
+  <script src="./config-registro-negocio.js" defer></script>
+  <script src="./comercio.js" defer></script>
+  <script src="./panel-repartidor.js" defer></script>
+  <script src='./busqueda.js' defer blocking="render"></script>
+  <link rel="stylesheet" href="./marco-ham.css">
+  <link rel="stylesheet" href="./direcciones.css">
+  <link rel="stylesheet" href="./corazones.css">
+  <link rel="stylesheet" href="./perfil-usuario.css">
+  <link rel="stylesheet" href="./comercio.css">
+  <link rel="stylesheet" href="./panel-repartidor.css">
+</head>
+<body class="marco-ham pagina-inicio">
+  <main class="inicio ham-contenido-cabecera" id="contenido-inicio" aria-label="Inicio provisional" data-node-id="408:544">
+    <header class="cabecera-inicio">
+      <div class="marca-inicio">
+        <button id="ubicacion-inicio" class="ubicacion-inicio" type="button" aria-label="Seleccionar dirección" aria-haspopup="dialog">
+          <span class="ubicacion" aria-hidden="true"></span>
+        </button>
+        <h1 aria-label="Ham!">Ham<span>!</span></h1>
+        <a class="carrito-inicio" href="./carrito.html" aria-label="Carrito de compras"><img src="./assets/icons/shopping-cart.svg" alt=""></a>
+      </div>
+      <a class="buscador entrada-busqueda" id="abrir-busqueda" href="#buscar">
+        <span aria-hidden="true">≡</span>
+        <span class="texto-buscador">Buscar...</span>
+        <span class="lupa" aria-hidden="true"></span>
+      </a>
+      <ul class="categorias" id="categorias"></ul>
+    </header>
+
+    <section class="novedades" aria-label="Novedades">
+      <div class="carrusel-novedades" id="novedades" tabindex="0" role="region" aria-label="Promociones"></div>
+      <div class="indicadores" id="indicadores" aria-label="Seleccionar promoción"></div>
+    </section>
+
+    <div id="restaurantes"></div>
+  </main>
+  <main class="inicio ham-contenido-cabecera" id="contenido-busqueda" aria-labelledby="titulo-busqueda" hidden inert>
+    <header class="cabecera-inicio">
+      <div class="marca-inicio">
+        <a id="volver-busqueda" class="volver-busqueda" href="./inicio.html" aria-label="Volver">
+          <img src="./assets/buscar-volver.svg" alt="" width="25" height="25">
+        </a>
+        <h1 aria-label="Ham!">Ham<span>!</span></h1>
+      </div>
+      <form class="buscador formulario-busqueda" id="formulario-busqueda" role="search">
+        <img src="./assets/buscar-lupa.svg" alt="" width="19" height="19">
+        <input id="consulta-busqueda" type="search" aria-label="Buscar comida, bebida o local" placeholder="Buscar comida, bebida o local" autocomplete="off" enterkeyhint="search">
+        <button id="limpiar-busqueda" class="limpiar-busqueda" type="button" aria-label="Borrar búsqueda" hidden>×</button>
+      </form>
+    </header>
+    <section id="vista-busqueda" class="vista-busqueda" aria-labelledby="titulo-busqueda">
+      <h2 id="titulo-busqueda" class="titulo-busqueda" tabindex="-1">Búsqueda</h2>
+      <p id="estado-busqueda" class="estado-busqueda" role="status"></p>
+      <ul id="resultados-busqueda" class="resultados-busqueda"></ul>
+    </section>
+  </main>
+  <main class="inicio perfil-usuario ham-contenido-cabecera" data-node-id="323:319" hidden>
+    <header class="encabezado-perfil">
+      <a id="volver-perfil" href="./inicio.html" aria-label="Volver"><img src="./assets/cuenta-volver.svg" alt=""></a>
+      <p class="logo-perfil">Ham!</p>
+      <div class="saludo-perfil">
+        <span class="foto-perfil-usuario">
+          <img id="avatar-perfil" src="./assets/perfil-usuario.svg" width="40" height="40" alt="">
+          <img id="foto-usuario" alt="Foto de perfil" hidden>
+        </span>
+        <div>
+          <h1 id="nombre-usuario"></h1>
+          <p>Bienvenida a tu espacio Ham!</p>
+        </div>
+      </div>
+    </header>
+    <div class="secciones-perfil" id="secciones-perfil"></div>
+    <footer class="pie-perfil">Ham! · Hecho para la comunidad UCA</footer>
+  </main>
+  <dialog class="dialogo-perfil" id="confirmar-salida-perfil" aria-modal="true" aria-labelledby="titulo-salida-perfil" aria-describedby="texto-salida-perfil" data-node-id="401:337">
+    <span class="icono-alerta-perfil" aria-hidden="true"><img src="./assets/cuenta-circulo.svg" alt=""><strong>!</strong></span>
+    <h2 id="titulo-salida-perfil">¿Cerrar sesión?</h2>
+    <p id="texto-salida-perfil">Podrás ingresar de nuevo a tu cuenta cuando quieras.</p>
+    <button id="confirmar-cierre" type="button">Cerrar sesión</button>
+    <button id="cancelar-cierre" type="button" autofocus>Cancelar</button>
+  </dialog>
+  <dialog class="dialogo-perfil" id="confirmar-dejar-rol" aria-labelledby="titulo-dejar-rol" aria-describedby="texto-dejar-rol">
+    <h2 id="titulo-dejar-rol"></h2>
+    <p id="texto-dejar-rol"></p>
+    <p id="error-dejar-rol" role="alert" hidden></p>
+    <button id="aceptar-dejar-rol" type="button"></button>
+    <button id="cancelar-dejar-rol" type="button" autofocus>Cancelar</button>
+  </dialog>
+  <dialog class="dialogo-perfil pendiente-perfil" id="aviso-seccion-perfil" aria-labelledby="titulo-aviso-perfil">
+    <h2 id="titulo-aviso-perfil"></h2>
+    <p id="texto-aviso-perfil"></p>
+    <button id="volver-aviso-perfil" type="button">Volver al Perfil</button>
+  </dialog>
+  <main class="inicio comercio-ham ham-contenido-cabecera" id="vista-tienda-ham" hidden>
+    <section data-vista-comercio="catalogo" data-node-id="857:834">
+      <header class="cabecera-comercio cabecera-comercio-catalogo"><span class="estado-comercio" id="estado-tienda-ham"></span><h1 id="titulo-tienda-ham" tabindex="-1">Mi tienda</h1><p>Administra tu espacio en Ham!</p></header>
+      <div class="cuerpo-comercio cuerpo-comercio-catalogo">
+        <section class="identidad-comercio"><span class="avatar-comercio" id="avatar-tienda-ham"></span><div><h2 id="nombre-tienda-ham"></h2><p id="descripcion-tienda-ham"></p><p id="ubicacion-tienda-ham"></p><a class="enlace-claro-comercio" href="#tienda/perfil">Editar perfil&nbsp; ›</a></div></section>
+        <section class="catalogo-comercio"><h2>MI CATÁLOGO</h2><p>Muestra, organiza y actualiza tus productos.</p><a class="cta-comercio" href="#tienda/nuevo"><span aria-hidden="true">+</span>Añadir producto</a>
+          <div class="titulo-productos-comercio"><h3>PRODUCTOS DEL CATÁLOGO</h3><span id="cantidad-tienda-ham"></span></div>
+          <p id="vacio-tienda-ham">Aún no tienes productos. Añade el primero para empezar tu catálogo.</p>
+          <div class="lista-comercio" id="lista-tienda-ham"></div>
+        </section>
+      </div>
+    </section>
+    <section data-vista-comercio="producto" data-node-id="857:981" hidden>
+      <header class="cabecera-comercio"><a class="volver-comercio" href="#tienda" aria-label="Volver a Mi tienda"><img src="./assets/comercio-volver.svg" width="22" height="22" alt=""></a><h1 id="titulo-producto-comercio" tabindex="-1">Añadir producto</h1><p></p></header>
+      <div class="cuerpo-comercio"><form class="editor-comercio" id="form-producto-comercio">
+        <div class="bloque-foto-comercio"><span class="foto-comercio" data-foto-editor></span><div><h2 data-titulo-foto></h2><p>Elige una foto de tu menú.</p><label class="enlace-claro-comercio"><span data-texto-subir></span><input type="file" name="foto" accept="image/png,image/jpeg,image/webp,image/avif"></label></div></div>
+        <div class="detalles-comercio"><h2>DETALLES DEL PRODUCTO</h2>
+          <label class="campo-comercio">Nombre del producto<input name="nombre" placeholder="Ej. Panini especial" required maxlength="100"></label>
+          <label class="campo-comercio">Descripción<textarea name="descripcion" placeholder="Describe los ingredientes y tu producto…" maxlength="600" required></textarea></label>
+          <label class="campo-comercio">Precio (USD)<input name="precio" type="number" min="0.01" max="9999.99" step="0.01" inputmode="decimal" placeholder="$0.00" required></label>
+          <label class="campo-comercio">Categoría<select name="categoria" required></select></label>
+          <div class="disponibilidad-comercio"><div><strong>Disponibilidad</strong><small>Marcar como disponible en el borrador.</small></div><label><input type="checkbox" name="disponible" aria-label="Disponible"><span><img src="./assets/comercio-switch.svg" width="23" height="23" alt=""></span></label></div>
+        </div>
+        <details class="extras-comercio"><summary>Extras y complementos <small>Añade opciones para este producto.</small></summary><label>Un extra por línea<textarea name="extras" maxlength="500"></textarea></label></details>
+        <div class="acciones-comercio"><button class="cta-comercio" type="submit">Guardar producto</button><button class="quitar-comercio" type="button" hidden>Eliminar producto</button><p class="mensaje-comercio" role="status"></p></div>
+      </form></div>
+    </section>
+    <section data-vista-comercio="perfil" data-node-id="857:1050" hidden>
+      <header class="cabecera-comercio"><a class="volver-comercio" href="#tienda" aria-label="Volver a Mi tienda"><img src="./assets/comercio-volver-perfil.svg" width="22" height="22" alt=""></a><h1 id="titulo-perfil-comercio" tabindex="-1">Editar mi tienda</h1><p></p></header>
+      <div class="cuerpo-comercio"><form class="editor-comercio" id="form-perfil-comercio">
+        <div class="bloque-foto-comercio"><span class="avatar-comercio" data-foto-editor></span><div><h2 data-titulo-foto></h2><p>La verán tus clientes en Ham!</p><label class="enlace-claro-comercio"><span data-texto-subir></span><input type="file" name="foto" accept="image/png,image/jpeg,image/webp,image/avif"></label></div></div>
+        <div class="detalles-comercio"><h2>DATOS DEL ESTABLECIMIENTO</h2>
+          <label class="campo-comercio">Nombre del negocio<input name="nombre" required maxlength="100"></label>
+          <label class="campo-comercio">Descripción del negocio<textarea name="descripcion" maxlength="600"></textarea></label>
+          <label class="campo-comercio">Categoría de comida<select name="categoria" required></select></label>
+          <label class="campo-comercio">Ubicación en la PEA<select name="ubicacion" required></select></label>
+          <label class="campo-comercio">Horario de atención<input name="horario" type="time" required></label>
+          <fieldset class="modalidades-comercio"><legend>Modalidades</legend><label><input type="checkbox" name="delivery"> Delivery</label><label><input type="checkbox" name="takeout"> Take out</label></fieldset>
+        </div>
+        <button class="cta-comercio" type="submit">Guardar cambios</button><p class="mensaje-comercio" role="status"></p>
+      </form></div>
+    </section>
+  </main>
+  <template id="plantilla-ficha-comercio"><article class="ficha-comercio"><span class="foto-comercio"></span><div><h4></h4><p></p><div class="precio-comercio"><strong></strong><span></span></div><a>Editar&nbsp; ›</a></div></article></template>
+  <dialog class="dialogo-perfil" id="confirmar-eliminar-comercio" aria-labelledby="titulo-eliminar-comercio"><h2 id="titulo-eliminar-comercio">¿Eliminar producto?</h2><form method="dialog"><button value="eliminar" class="cta-comercio">Eliminar</button><button value="cancelar" autofocus>Cancelar</button></form></dialog>
+  <main class="inicio panel-repartidor ham-contenido-cabecera" id="panel-repartidor" hidden></main>
+  <nav class="barra-inicio" aria-label="Navegación" data-barra-ham="inicio"></nav>
+  <template id="plantilla-restaurante">
+    <article class="restaurante">
+      <div class="foto-restaurante">
+        <img class="imagen-restaurante" width="132" height="126" alt="">
+        <p class="promocion-restaurante"></p>
+      </div>
+      <h3></h3>
+      <ul class="etiquetas"></ul>
+      <span class="detalle-restaurante" aria-hidden="true">
+        <img src="./assets/inicio-divisor.svg" alt="">
+        <span>↗</span>
+      </span>
+    </article>
+  </template>
+</body>
+</html>

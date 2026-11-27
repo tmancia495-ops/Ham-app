@@ -1,0 +1,51 @@
+.vista-recuperacion[hidden], #acceso-ham[hidden] { display: none !important; }
+.vista-recuperacion {
+  background: linear-gradient(#41010280,#41010280), url('./assets/splash-fondo.png') center top / 100% auto no-repeat #410102;
+  padding: 77px 22px 24px;
+  position: relative;
+  color: #f5f0ea;
+}
+.vista-recuperacion header { min-height: 194px; text-align: center; }
+.vista-recuperacion[data-paso-recuperacion="restablecer"] header { min-height: 172px; }
+.volver-recuperacion { position: absolute; top: 35px; left: 13px; display: grid; place-items: center; width: 45px; height: 45px; }
+.marca-recuperacion { font: 700 64px/85px 'Fredoka Bold', Fredoka, sans-serif; }
+.vista-recuperacion h1 { font: 700 26px/32px 'Fredoka Bold', Fredoka, sans-serif; }
+.vista-recuperacion header > p:last-child { margin-top: 4px; font-size: 15px; }
+.tarjeta-recuperacion { padding: 25px 21px 21px; border-radius: 22px; background: #f5f0ea; color: #5c170b; }
+.icono-recuperacion { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 16px; background: #f1e4de; }
+.tarjeta-recuperacion h2 { margin: 20px 0 10px; color: #740c03; font: 700 25px/30px 'Fredoka Bold', Fredoka, sans-serif; }
+.detalle-recuperacion { min-height: 34px; color: #846f6b; font-size: 14px; line-height: 17px; max-width: 280px; }
+.tarjeta-recuperacion form { margin: 42px 0 0; }
+.tarjeta-recuperacion label, #etiqueta-otp { display: block; margin: 0 0 10px; font-weight: 500; font-size: 13px; }
+.tarjeta-recuperacion input { display: block; width: 100%; min-width: 0; min-height: 48px; padding: 0 12px; border: 1px solid #e8ddd6; border-radius: 10px; background: #fffdfc; color: #321010; font: 400 16px Fredoka, sans-serif; }
+.tarjeta-recuperacion input::placeholder { color: #846f6b; font-size: 15px; }
+.tarjeta-recuperacion input:focus { outline: 2px solid #740c03; outline-offset: 1px; }
+.tarjeta-recuperacion input[aria-invalid="true"] { border-color: #740c03; }
+.error-recuperacion { margin: 5px 0 0; color: #740c03; font-size: 12px; }
+.error-recuperacion:empty { margin: 0; }
+.nota-recuperacion, .nota-clave { display: flex; align-items: center; gap: 8px; font-size: 12px; }
+.nota-recuperacion { min-height: 46px; margin-top: 29px; padding: 5px 12px; border-radius: 12px; background: #f1e4de; overflow-wrap: anywhere; }
+.boton-recuperacion { display: block; width: 100%; min-height: 52px; margin-top: 18px; padding: 6px 8px; border-radius: 12px; background: #740c03; color: #f5f0ea; font-size: 17px; font-weight: 600; }
+.boton-recuperacion:disabled { cursor: wait; opacity: .75; }
+.salir-recuperacion { display: block; width: fit-content; margin: 42px auto 0; padding: 10px; color: #f5f0ea; font-size: 15px; text-decoration: none; font-weight: 500; }
+[data-paso-recuperacion="verificar"] .tarjeta-recuperacion { padding-top: 23px; padding-bottom: 30px; }
+[data-paso-recuperacion="verificar"] .tarjeta-recuperacion form { margin-top: 10px; }
+.codigo-demo-visible { min-height: 17px; margin: 5px 0 0; color: #740c03; font-size: 12px; }
+.casillas-otp { display: grid; grid-template-columns: repeat(6,minmax(0,45px)); gap: clamp(3px,1.7vw,7px); }
+.casillas-otp input { min-height: 56px; padding: 0; text-align: center; font-size: 19px; font-weight: 600; }
+.casillas-otp input::placeholder { color: #c8a79b; font-size: 19px; }
+.reenviar-recuperacion { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-top: 14px; color: #846f6b; font-size: 13px; }
+#reenviar-recuperacion { min-height: 30px; color: #740c03; font-size: 13px; font-weight: 600; text-align: right; }
+#reenviar-recuperacion:disabled { color: #846f6b; cursor: default; }
+.spam-recuperacion { margin-top: 6px; color: #846f6b; font-size: 12px; }
+[data-paso-recuperacion="verificar"] .boton-recuperacion { margin-top: 25px; }
+[data-paso-recuperacion="verificar"] .salir-recuperacion { margin-top: 32px; }
+[data-paso-recuperacion="restablecer"] .tarjeta-recuperacion { padding-block: 28px 27px; }
+[data-paso-recuperacion="restablecer"] form { margin-top: 29px; }
+.campo-clave-recuperacion + .campo-clave-recuperacion { margin-top: 21px; }
+.campo-clave-recuperacion > div { position: relative; }
+.campo-clave-recuperacion input { padding-right: 71px; }
+.campo-clave-recuperacion button { position: absolute; inset: 0 8px 0 auto; width: 61px; color: #740c03; font-size: 12px; font-weight: 500; }
+.nota-clave { margin: 18px 2px 0; color: #846f6b; font-size: 13px; }
+[data-paso-recuperacion="restablecer"] .boton-recuperacion { margin-top: 23px; }
+[data-paso-recuperacion="restablecer"] .salir-recuperacion { margin-top: 6px; }

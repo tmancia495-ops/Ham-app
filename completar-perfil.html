@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script src="./transiciones-ham.js"></script>
+  <meta charset="UTF-8">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/ham-icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/ham-icon-180.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Ham!">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#410102">
+  <title>Completa tu perfil · Ham!</title>
+  <link rel="stylesheet" href="./iniciar-sesion.css">
+  <link rel="stylesheet" href="./completar-perfil.css">
+  <link rel="stylesheet" href="./inicio.css">
+  <script src="./cuenta-local.js" defer></script>
+  <script src="./comercio-local.js" defer></script>
+  <script src="./barra-ham.js" defer></script>
+  <script src="./completar-perfil.js" defer blocking="render"></script>
+  <link rel="stylesheet" href="./marco-ham.css">
+</head>
+<body class="marco-ham">
+  <main class="acceso perfil" data-node-id="456:80">
+    <header class="bienvenida">
+      <p class="marca">Ham!</p>
+      <p class="saludo">¡Hagámoslo tuyo!</p>
+      <p>Unos datos más y tendrás tu perfil listo.</p>
+    </header>
+
+    <section class="tarjeta" aria-labelledby="titulo-perfil">
+      <h1 id="titulo-perfil">Completa tu perfil</h1>
+      <p class="introduccion">Cuéntanos un poquito sobre ti.</p>
+
+      <div class="control-foto">
+        <button id="avatar" class="avatar" type="button" aria-label="Añadir foto de perfil" aria-haspopup="dialog">
+          <img src="./assets/perfil-avatar.svg" width="84" height="84" alt="">
+          <img id="avatar-usuario" src="./assets/perfil-usuario.svg" width="40" height="40" alt="">
+          <img id="avatar-foto" alt="" hidden>
+          <span class="avatar-insignia" aria-hidden="true">
+            <img src="./assets/perfil-insignia.svg" width="29" height="29" alt="">
+            <img src="./assets/perfil-icono-avatar.svg" width="17" height="17" alt="">
+          </span>
+          <span class="avatar-insignia avatar-insignia-panel" aria-hidden="true">
+            <img src="./assets/perfil-insignia-panel.svg" width="29" height="29" alt="">
+            <img src="./assets/perfil-icono-avatar-panel.svg" width="17" height="17" alt="">
+          </span>
+        </button>
+        <button id="editar-foto" type="button" aria-haspopup="dialog">Añadir foto de perfil</button>
+      </div>
+
+      <form id="formulario-perfil" action="./inicio.html">
+        <div class="campo">
+          <label for="nombre-perfil">Nombre completo</label>
+          <input id="nombre-perfil" autocomplete="name" placeholder="Nombre y apellido">
+        </div>
+        <div class="campo">
+          <label for="contacto">Número de contacto</label>
+          <input id="contacto" type="tel" autocomplete="tel" placeholder="7000 0000">
+        </div>
+        <div class="campo">
+          <label for="direccion">Dirección de entrega</label>
+          <input id="direccion" autocomplete="street-address" placeholder="Edificio, nivel o punto de referencia" aria-describedby="ejemplo-direccion">
+          <p id="ejemplo-direccion">Por ejemplo: Edificio A, primer nivel.</p>
+        </div>
+        <button class="enviar" type="submit">Guardar y continuar</button>
+        <a id="cancelar-edicion-perfil" href="./perfil-usuario.html" hidden>Volver al Perfil</a>
+        <p id='estado-guardar-perfil' role='status' hidden></p>
+      </form>
+    </section>
+    <p class="nota-perfil">Podrás modificar estos datos en tu perfil.</p>
+  </main>
+
+  <dialog id="fotos" aria-labelledby="titulo-fotos">
+    <section class="panel-foto" data-node-id="462:112">
+      <div class="barra-panel" aria-hidden="true"></div>
+      <header>
+        <h2 id="titulo-fotos" tabindex="-1">Foto de perfil</h2>
+        <p>Elige cómo quieres agregar o cambiar tu foto.</p>
+      </header>
+      <button class="opcion-foto" id="abrir-camara" type="button">
+        <span class="icono-opcion"><img src="./assets/perfil-camara.svg" width="20" height="20" alt=""></span>
+        Tomar foto
+        <img class="flecha-opcion" src="./assets/perfil-flecha.svg" width="16" height="16" alt="">
+      </button>
+      <button class="opcion-foto" id="abrir-galeria" type="button">
+        <span class="icono-opcion"><img src="./assets/perfil-galeria.svg" width="20" height="20" alt=""></span>
+        Galería
+        <img class="flecha-opcion" src="./assets/perfil-flecha.svg" width="16" height="16" alt="">
+      </button>
+      <button class="opcion-foto eliminar-foto" id="eliminar-foto" type="button">
+        <span class="icono-opcion"><img src="./assets/perfil-eliminar.svg" width="20" height="20" alt=""></span>
+        Eliminar foto
+        <img class="flecha-opcion" src="./assets/perfil-flecha-eliminar.svg" width="16" height="16" alt="">
+      </button>
+      <button class="cancelar-panel" type="button" data-cerrar-fotos>Cancelar</button>
+    </section>
+
+    <section class="vista-foto galeria" data-node-id="465:80" hidden>
+      <header class="cabecera-galeria">
+        <h2 id="titulo-galeria" tabindex="-1">Fotos</h2>
+        <button type="button" data-cerrar-fotos>Cancelar</button>
+        <p>Selecciona una foto para tu perfil</p>
+      </header>
+      <div class="contenido-galeria">
+        <h3>Recientes</h3>
+        <button id="elegir-archivo" type="button">Elegir imagen del dispositivo</button>
+        <input id="archivo-foto" type="file" accept="image/*" hidden>
+        <p id="error-galeria" role="status"></p>
+        <figure id="muestra-galeria" hidden>
+          <img id="imagen-galeria" alt="Vista previa de la foto elegida">
+          <span class="marca-seleccion" aria-hidden="true">
+            <img src="./assets/perfil-seleccion.svg" width="26" height="26" alt="">
+            <img src="./assets/perfil-marca-seleccion.svg" width="16" height="16" alt="">
+          </span>
+        </figure>
+      </div>
+      <footer class="pie-galeria">
+        <p id="seleccion-galeria" role="status">Ninguna foto seleccionada</p>
+        <button class="enviar" id="usar-archivo" type="button" disabled>Usar foto</button>
+      </footer>
+    </section>
+
+    <section class="vista-foto camara" data-node-id="465:114" hidden>
+      <header class="cabecera-camara">
+        <button type="button" data-cerrar-fotos>Cancelar</button>
+        <h2 id="titulo-camara" tabindex="-1">Cámara</h2>
+        <button id="flash" type="button" aria-label="Linterna" aria-pressed="false" disabled>
+          <img src="./assets/perfil-flash.svg" width="23" height="23" alt="">
+        </button>
+      </header>
+      <div class="visor">
+        <video id="video-camara" autoplay playsinline muted></video>
+        <img id="imagen-captura" alt="Vista previa de la foto capturada" hidden>
+        <div id="guias-camara" class="guias" aria-hidden="true">
+          <span class="enfoque"></span>
+          <span>Vista previa de cámara</span>
+        </div>
+      </div>
+      <footer class="pie-camara">
+        <p id="estado-camara" role="status">FOTO</p>
+        <div id="controles-camara" class="controles-camara">
+          <button id="galeria-camara" type="button" aria-label="Galería">
+            <img id="ultima-foto" alt="" hidden>
+            <img id="icono-ultima-foto" src="./assets/perfil-galeria.svg" width="20" height="20" alt="">
+          </button>
+          <button id="capturar" type="button" aria-label="Capturar foto" disabled>
+            <img src="./assets/perfil-disparador-anillo.svg" width="76" height="76" alt="">
+            <img src="./assets/perfil-disparador-separador.svg" width="64" height="64" alt="">
+            <img src="./assets/perfil-disparador-centro.svg" width="54" height="54" alt="">
+          </button>
+          <button id="girar-camara" type="button" aria-label="Cambiar cámara" disabled>
+            <img src="./assets/perfil-girar.svg" width="32" height="32" alt="">
+          </button>
+        </div>
+        <div id="controles-captura" class="controles-captura" hidden>
+          <button id="repetir" type="button">Repetir</button>
+          <button id="usar-captura" class="enviar" type="button">Usar foto</button>
+        </div>
+        <button id="volver-camara" type="button" data-cerrar-fotos hidden>Volver</button>
+        <span class="indicador-inicio" aria-hidden="true"></span>
+      </footer>
+    </section>
+  </dialog>
+  <nav class="barra-inicio" aria-label="Navegación" data-barra-ham="editor-perfil" hidden></nav>
+</body>
+</html>

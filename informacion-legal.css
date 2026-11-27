@@ -1,0 +1,69 @@
+.pagina-legal::before, .barra-legal::before { display: none; }
+.pagina-legal [hidden], .lector-legal[hidden], .barra-legal[hidden] { display: none !important; }
+.barra-legal { background: #f5f0ea; }
+.pagina-legal .pestana-perfil, .barra-legal .pestana-perfil { justify-self: center; }
+
+.marco-ham.pagina-legal > .indice-legal { padding: 0 21px 14px; overflow-x: hidden; }
+.cabecera-indice-legal { position: relative; min-height: 128px; padding: 71px 0 12px 46px; color: var(--crema); }
+.cabecera-indice-legal a {
+  position: absolute; left: -4px; top: 62px; width: 46px; height: 48px; padding-left: 6px;
+  color: inherit; font-size: 36px; line-height: 48px; text-decoration: none;
+}
+.cabecera-indice-legal h1 { margin: 0; font: 700 24px/34px 'Fredoka Bold', Fredoka, sans-serif; }
+.destacado-legal { min-height: 114px; padding: 20px 18px; border-radius: 18px; background: #410102; color: #f5f0ea; }
+.destacado-legal h2 { margin: 0 0 8px; font: 700 23px/29px 'Fredoka Bold', Fredoka, sans-serif; }
+.destacado-legal p { margin: 0; font-size: 14px; line-height: 17px; }
+.documentos-indice-legal h2 { margin: 29px 2px 9px; color: #846f6b; font: 700 12px/17px 'Fredoka Bold', Fredoka, sans-serif; }
+.documentos-indice-legal ol { display: grid; gap: 11px; margin: 0; padding: 0; list-style: none; }
+.documentos-indice-legal a {
+  display: grid; grid-template-columns: 38px minmax(0, 1fr) 17px; gap: 13px; align-items: center;
+  min-height: 79px; padding: 10px 15px; border-radius: 15px; background: #fffdfc; color: #321010; text-decoration: none;
+}
+.numero-documento { display: grid; place-items: center; width: 38px; height: 38px; background: url('./assets/legal-numero.svg') no-repeat; color: #740c03; font: 700 13px 'Fredoka Bold', Fredoka, sans-serif; }
+.documentos-indice-legal strong { display: block; font-size: 16px; line-height: 22px; font-weight: 600; }
+.documentos-indice-legal small { display: block; margin-top: 5px; color: #846f6b; font-size: 12px; line-height: 17px; }
+.flecha-documento { color: #740c03; font-size: 27px; line-height: 1; }
+.pie-indice-legal { margin: 32px 2px 0; color: #846f6b; }
+.pie-indice-legal p { margin: 0; font-size: 13px; line-height: 18px; }
+.pie-indice-legal p + p { margin-top: 8px; font-size: 12px; }
+
+.marco-ham.pagina-inicio > main.lector-legal {
+  display: flex; flex-direction: column; height: calc(100% - var(--alto-barra-inicio, 48px));
+  padding: 0; background: #f5f0ea; color: #740c03; overflow: hidden;
+}
+.cabecera-lector {
+  position: relative; isolation: isolate; flex: 0 0 auto; min-height: 123px;
+  padding: 75px 20px 18px 67px; border-bottom: 1px solid #e7dad2;
+}
+.cabecera-lector::before {
+  content: ''; position: absolute; inset: 0; z-index: -1; opacity: .5;
+  background: url('./assets/inicio-fondo.png') center -1px / 402px auto no-repeat;
+}
+.cabecera-lector a {
+  position: absolute; top: 63px; left: 18px; display: grid; place-items: center;
+  width: 41px; height: 42px; border-radius: 12px; background: #f5f0ea;
+}
+.cabecera-lector h1 { margin: 0; font: 700 20px/24px 'Fredoka Bold', Fredoka, sans-serif; }
+[data-documento-actual="terminos"] .cabecera-lector h1,
+[data-documento-actual="privacidad"] .cabecera-lector h1,
+[data-documento-actual="negocios"] .cabecera-lector h1 { font-size: 23px; line-height: 26px; }
+.lectura-legal { flex: 1 1 auto; min-height: 0; overflow: hidden auto; overscroll-behavior-y: contain; padding: 17px 20px 14px; }
+.lectura-legal article {
+  display: grid; gap: 14px; border-radius: 18px; padding: 23px 19px 27px; background: #fffdfc;
+  color: #3b211c; overflow-wrap: anywhere; font: 400 14px/23px Fredoka, sans-serif;
+}
+.lectura-legal article :is(p, h2, h3, h4, ul, ol) { margin: 0; }
+.lectura-legal h2 { color: #740c03; font: 600 24px/32px Fredoka, sans-serif; }
+.lectura-legal h3 { color: #740c03; font: 600 19px/28px Fredoka, sans-serif; }
+.lectura-legal h4 { color: #5c170b; font: 600 16px/25px Fredoka, sans-serif; }
+.lectura-legal .nota-legal { color: #846f6b; font: 700 11px/17px 'Fredoka Bold', Fredoka, sans-serif; }
+.lectura-legal .subtitulo-legal { color: #846f6b; }
+.lectura-legal .control-version-legal { font-size: 12px; white-space: pre-wrap; }
+.lectura-legal hr { width: 100%; margin: 0; border: 0; border-top: 1px solid #e7dad2; }
+.lista-documento { display: grid; gap: 14px; padding: 0; list-style: none; }
+[data-documento-actual="cancelaciones"] .lectura-legal h2 { font-size: 19px; line-height: 28px; }
+[data-documento-actual="negocios"] .lectura-legal article { gap: 15px; }
+[data-documento-actual="negocios"] .lectura-legal h2 { font: 700 24px/29px 'Fredoka Bold', Fredoka, sans-serif; }
+.crear-cuenta .terminos a { color: inherit; text-decoration: underline; }
+
+.marco-ham > .crear-cuenta[hidden] { display: none !important; }

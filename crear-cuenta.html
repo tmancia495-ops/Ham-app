@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script src="./transiciones-ham.js"></script>
+  <meta charset="UTF-8">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/ham-icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/ham-icon-180.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Ham!">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#410102">
+  <title>Crea tu cuenta · Ham!</title>
+  <link rel="stylesheet" href="./iniciar-sesion.css">
+  <link rel="stylesheet" href="./inicio.css">
+  <link rel="stylesheet" href="./busqueda.css">
+  <link rel="stylesheet" href="./crear-cuenta.css">
+  <link rel="stylesheet" href="./informacion-legal.css">
+  <script src="./cuenta-local.js" defer></script>
+  <script src="./documentos-legales.js" defer></script>
+  <script src="./documentos-legales/terminos.js" defer></script>
+  <script src="./documentos-legales/privacidad.js" defer></script>
+  <script src="./lector-legal.js" defer></script>
+  <script src="./comercio-local.js" defer></script>
+  <script src="./barra-ham.js" defer></script>
+  <script src="./crear-cuenta.js" defer></script>
+  <link rel="stylesheet" href="./marco-ham.css">
+</head>
+<body class="marco-ham">
+  <main class="acceso crear-cuenta" data-node-id="399:217">
+    <header class="bienvenida">
+      <p class="marca">Ham!</p>
+      <p class="saludo">¡Únete al antojo!</p>
+      <p>Comer rico entre clases es más fácil.</p>
+    </header>
+
+    <section class="tarjeta" aria-labelledby="titulo-registro">
+      <h1 id="titulo-registro">Crea tu cuenta</h1>
+      <p class="introduccion">Tus favoritos, a solo unos toques.</p>
+
+      <form id="formulario-registro" novalidate>
+        <div class="campo">
+          <label for="nombre">Nombre completo</label>
+          <input id="nombre" type="text" autocomplete="name" placeholder="¿Cómo te llamas?" required aria-describedby="error-nombre">
+          <p class="error-campo" id="error-nombre" aria-live="polite"></p>
+        </div>
+
+        <div class="campo">
+          <label for="correo">Correo electrónico</label>
+          <input id="correo" type="email" autocomplete="email" placeholder="nombre@correo.com" required aria-describedby="error-correo">
+          <p class="error-campo" id="error-correo" aria-live="polite"></p>
+        </div>
+
+        <div class="campo">
+          <label for="contrasena">Contraseña</label>
+          <div class="campo-contrasena">
+            <input id="contrasena" type="password" autocomplete="new-password" placeholder="Mínimo 8 caracteres" minlength="8" required aria-describedby="error-contrasena">
+            <button id="mostrar-contrasena" type="button" aria-controls="contrasena" aria-pressed="false" hidden>Mostrar</button>
+          </div>
+          <p class="error-campo" id="error-contrasena" aria-live="polite"></p>
+        </div>
+
+        <div class="terminos">
+          <label class="recordar" for="aceptar-terminos">
+            <input type="checkbox" id="aceptar-terminos" required aria-describedby="error-aceptar-terminos">
+            <span>Acepto los <a href="#terminos" data-legal-registro>términos</a> y la <a href="#privacidad" data-legal-registro>política de privacidad</a></span>
+          </label>
+          <p class="error-campo" id="error-aceptar-terminos" aria-live="polite"></p>
+        </div>
+
+        <button class="enviar" type="submit" disabled>Crear cuenta</button>
+        <p id="estado-registro" role="status"></p>
+      </form>
+    </section>
+
+    <footer class="registro">
+      <span>¿Ya tienes cuenta?</span>
+      <a href="./iniciar-sesion.html">Inicia sesión</a>
+    </footer>
+  </main>
+  <main class="lector-legal" hidden></main>
+  <nav class="barra-inicio barra-legal" aria-label="Navegación" data-barra-ham="legal" hidden></nav>
+</body>
+</html>

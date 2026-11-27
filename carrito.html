@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script src="./transiciones-ham.js"></script>
+  <meta charset="utf-8">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/ham-icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/ham-icon-180.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Ham!">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f0ea">
+  <title>Tu carrito · Ham!</title>
+  <link rel="stylesheet" href="./iniciar-sesion.css">
+  <link rel="stylesheet" href="./inicio.css">
+  <link rel="stylesheet" href="./marco-ham.css">
+  <link rel="stylesheet" href="./carrito.css">
+  <link rel="stylesheet" href="./direcciones.css">
+  <link rel="stylesheet" href="./metodo-recepcion.css">
+  <script src="./cuenta-local.js" defer></script>
+  <script src="./direcciones.js" defer></script>
+  <script src="./datos-negocios.js" defer></script>
+  <script src="./pedido-local.js" defer></script>
+  <script src="./preferencias-notificaciones.js" defer></script>
+  <script src="./datos-cupones.js" defer></script>
+  <script src="./cupones-local.js" defer></script>
+  <script src="./pedidos-confirmados.js" defer></script>
+  <script src="./carrito.js" defer blocking="render"></script>
+</head>
+<body class="marco-ham pagina-inicio pagina-carrito">
+  <main data-node-id="399:241">
+    <header class="cabecera-carrito">
+      <a id="volver-carrito" href="./inicio.html" aria-label="Volver"><img src="./assets/buscar-volver.svg" width="25" height="25" alt=""></a>
+      <h1>Tu carrito</h1>
+    </header>
+    <section id="carrito-vacio" hidden><h2>Tu carrito está vacío</h2><a href="./inicio.html">Explorar Inicio</a></section>
+    <section id="contenido-carrito" hidden>
+      <div id="lineas-carrito"></div>
+      <h2>¿Cómo quieres recibirlo?</h2>
+      <div class="metodo-carrito" role="group" aria-label="Método de entrega">
+        <button type="button" data-metodo="entrega" aria-pressed="false"><img src="./assets/carrito-entrega.svg" alt="">Entrega</button>
+        <button type="button" data-metodo="recoger" aria-pressed="true"><img src="./assets/carrito-recoger.svg" alt="">Recoger</button>
+      </div>
+      <div id="direccion-carrito" data-direccion-entrega hidden><h2>Dirección de entrega</h2></div>
+      <section class="retiro-carrito" id="retiro-carrito">
+        <h2>Reserva tu retiro</h2>
+        <p>Selecciona fecha y hora. Los horarios son de prueba.</p>
+        <div class="hora-carrito">
+          <label class="fecha-control">
+            <input id="fecha-retiro" type="date" aria-label="Fecha de retiro" required>
+            <span id="fecha-retiro-visible" aria-hidden="true"></span>
+          </label>
+          <input id="hora-retiro" type="time" aria-label="Hora de retiro" required>
+        </div>
+        <p id="error-retiro" role="status"></p>
+      </section>
+      <section class="cupon-carrito" id="cupon-carrito" hidden>
+        <label for="elegir-cupon-carrito">Código de descuento</label>
+        <div>
+          <select id="elegir-cupon-carrito"></select>
+          <button type="button" id="aplicar-cupon-carrito">Aplicar</button>
+          <button type="button" id="retirar-cupon-carrito" hidden>Retirar código</button>
+        </div>
+        <p id="aviso-cupon-carrito" role="status"></p>
+      </section>
+      <section class="resumen-carrito">
+        <h2>Resumen de tu pedido</h2>
+        <p><span id="etiqueta-subtotal">Subtotal</span> <strong id="subtotal-carrito"></strong></p>
+        <p id="precios-pendientes" hidden>Hay artículos o extras con precio pendiente.</p>
+        <p id="fila-descuento-carrito" hidden><span id="etiqueta-descuento-carrito">Descuento</span> <strong id="descuento-carrito"></strong></p>
+        <p class="total-carrito">Total <strong id="total-carrito"></strong></p>
+      </section>
+      <button type="button" id="continuar-carrito"></button>
+    </section>
+    <p id="estado-carrito" role="status"></p>
+    <details id="historial-carrito" hidden>
+      <summary>Pedidos confirmados</summary>
+      <ul></ul>
+    </details>
+  </main>
+  <template id="fila-carrito">
+    <article class="fila-carrito">
+      <a class="foto-carrito"><img width="78" height="76" alt=""></a>
+      <div class="texto-carrito">
+        <div class="cabecera-linea-carrito"><a class="nombre-carrito"></a><button class="quitar-carrito" type="button">Eliminar</button></div>
+        <p class="extras-carrito"></p>
+        <p class="reserva-carrito" hidden></p>
+        <div class="pie-linea-carrito">
+          <div><strong class="precio-carrito"></strong><p class="precio-unitario-carrito" hidden></p></div>
+          <div class="contador-carrito">
+            <button type="button" data-cambio="-1" aria-label="Disminuir cantidad"><img src="./assets/carrito-menos.svg" alt=""></button>
+            <output></output>
+            <button type="button" data-cambio="1" aria-label="Aumentar cantidad"><img src="./assets/carrito-mas.svg" alt=""></button>
+          </div>
+        </div>
+      </div>
+    </article>
+  </template>
+</body>
+</html>

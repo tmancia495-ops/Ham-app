@@ -1,0 +1,44 @@
+.crear-cuenta {
+  padding-bottom: 69px;
+  background-position: center, center 3px;
+}
+
+.crear-cuenta .bienvenida {
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.crear-cuenta .bienvenida > p:not(.marca) { left: 0; }
+
+.crear-cuenta .saludo { line-height: 36px; }
+
+.crear-cuenta .tarjeta {
+  min-height: 486px;
+  padding-top: 28px;
+}
+
+.crear-cuenta .tarjeta h1 {
+  line-height: 36px;
+  transform: translateY(-3px);
+}
+
+.crear-cuenta form { margin-top: 13px; }
+
+.crear-cuenta .campo + .campo { margin-top: 14px; }
+
+.crear-cuenta .terminos { margin-top: 17px; }
+
+.crear-cuenta .recordar { font-size: 12px; }
+
+.crear-cuenta .enviar { margin-top: 29px; }
+
+.crear-cuenta .registro { margin-top: 16px; }
+
+.crear-cuenta [aria-invalid="true"] { border-color: var(--rojo); }
+
+.error-campo:not(:empty),
+#estado-registro:not(:empty) {
+  margin-top: 5px;
+  font-size: 13px;
+  line-height: 18px;
+}

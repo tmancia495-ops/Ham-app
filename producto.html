@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script src="./transiciones-ham.js"></script>
+  <meta charset="utf-8">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/ham-icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/ham-icon-180.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Ham!">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f0ea">
+  <title>Producto · Ham!</title>
+  <link rel="stylesheet" href="./iniciar-sesion.css">
+  <link rel="stylesheet" href="./inicio.css">
+  <link rel="stylesheet" href="./marco-ham.css">
+  <link rel="stylesheet" href="./producto.css">
+  <link rel="stylesheet" href="./direcciones.css">
+  <link rel="stylesheet" href="./metodo-recepcion.css">
+  <script src="./cuenta-local.js" defer></script>
+  <script src="./direcciones.js" defer></script>
+  <script src="./datos-negocios.js" defer></script>
+  <script src="./pedido-local.js" defer></script>
+  <script src="./favoritos-local.js" defer></script>
+  <script src="./producto.js" defer blocking="render"></script>
+  <link rel="stylesheet" href="./corazones.css">
+</head>
+<body class="marco-ham pagina-inicio pagina-producto">
+  <main id="producto" class="ham-contenido-cabecera" data-node-id="408:890">
+    <header class="cabecera-producto">
+      <a id="volver-producto" href="./inicio.html" aria-label="Volver"><img src="./assets/producto-volver.svg" alt=""></a>
+      <p id="local-producto"></p>
+      <span id="favorito-producto"></span>
+    </header>
+    <p id="producto-ausente" hidden>Este producto no está disponible.</p>
+    <form id="formulario-producto" hidden>
+      <div class="foto-detalle"><img id="foto-detalle" alt=""></div>
+      <div class="panel-producto">
+        <div class="interior-producto">
+          <div class="informacion-producto">
+            <h1 id="nombre-producto"></h1>
+            <p id="categoria-producto"></p>
+            <img id="estrellas-producto" src="./assets/producto-estrellas.svg" alt="4 de 5 estrellas" hidden>
+            <p id="descripcion-detalle"></p>
+            <p id="precio-detalle"></p>
+          </div>
+          <fieldset id="grupo-extras" hidden>
+            <legend>Extras</legend>
+            <div id="extras-producto"></div>
+          </fieldset>
+          <div class="cantidad-producto" aria-label="Cantidad">
+            <button id="menos-producto" type="button" aria-label="Disminuir cantidad" disabled><img src="./assets/producto-menos.svg" alt=""></button>
+            <output id="cantidad-producto" aria-live="polite">1</output>
+            <button id="mas-producto" type="button" aria-label="Aumentar cantidad"><img src="./assets/producto-mas.svg" alt=""></button>
+          </div>
+          <div class="metodo-carrito selector-metodo-producto" role="group" aria-label="Método de entrega">
+            <button type="button" data-metodo="entrega" aria-pressed="false"><img src="./assets/carrito-entrega.svg" alt="">Entrega</button>
+            <button type="button" data-metodo="recoger" aria-pressed="true"><img src="./assets/carrito-recoger.svg" alt="">Ir al local</button>
+          </div>
+          <div id="direccion-producto" data-direccion-entrega hidden></div>
+          <fieldset class="reserva-producto">
+            <h2>Reservar pedido</h2>
+            <input id="nombre-reserva" aria-label="Nombre para la reserva" aria-required="true" aria-describedby="estado-producto" autocomplete="name" placeholder="Escribe tu nombre..." maxlength="100">
+            <div class="campos-reserva">
+              <div>
+                <p id="etiqueta-hora-producto">Hora para recoger</p>
+                <div class="hora-reserva">
+                  <select id="hora-reserva" aria-label="Hora" aria-describedby="estado-producto"></select>
+                  <select id="minuto-reserva" aria-label="Minutos"></select>
+                  <select id="periodo-reserva" aria-label="AM o PM"><option>AM</option><option>PM</option></select>
+                </div>
+              </div>
+              <img src="./assets/producto-divisor.svg" alt="" class="divisor-reserva">
+              <label>Comentarios <input id="comentarios-reserva" placeholder="..." maxlength="200"></label>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+      <button id="anadir-producto" type="submit">Añadir</button>
+      <p id="estado-producto" role="status"></p>
+    </form>
+  </main>
+</body>
+</html>

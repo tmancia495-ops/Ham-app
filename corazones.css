@@ -1,0 +1,70 @@
+.boton-favorito {
+  display: grid;
+  place-items: center;
+  width: 29px;
+  height: 29px;
+  padding: 0;
+  border-radius: 50%;
+  background: #fffdfc;
+}
+.boton-favorito > span {
+  width: 18px;
+  height: 18px;
+  background: url('./assets/favoritos-corazon.svg') center no-repeat;
+}
+.boton-favorito[aria-pressed="true"] > span { background-image: url('./assets/favoritos-corazon-relleno.svg'); }
+
+.soporte-favorito-inicio {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  flex: 0 0 142px;
+  width: 142px;
+  scroll-snap-align: start;
+}
+.soporte-favorito-inicio > .restaurante { display: block; width: 100%; scroll-snap-align: none; }
+.soporte-favorito-inicio > .restaurante:focus-visible { outline-offset: -2px; }
+:is(.soporte-favorito-inicio, #menu-negocio > li) > .boton-favorito {
+  position: absolute;
+  z-index: 1;
+  top: var(--favorito-foto-top, 8px);
+  right: var(--favorito-foto-right, 9px);
+  width: 36px;
+  height: 36px;
+  background: transparent;
+}
+:is(.soporte-favorito-inicio, #menu-negocio > li) > .boton-favorito::before {
+  content: '';
+  grid-area: 1 / 1;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: white;
+  pointer-events: none;
+}
+:is(.soporte-favorito-inicio, #menu-negocio > li) > .boton-favorito > span {
+  grid-area: 1 / 1;
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  pointer-events: none;
+}
+
+
+.resultados-busqueda > li { position: relative; }
+.resultados-busqueda > li > .boton-favorito { position: absolute; top: 9px; right: 9px; }
+
+#favorito-negocio, #favorito-producto { display: flex; justify-content: end; }
+.cabecera-negocio #favorito-negocio { grid-column: 2; grid-row: 1; justify-self: end; margin-right: 9px; }
+.cabecera-negocio h1 { grid-column: 2; grid-row: 1; }
+.cabecera-producto #favorito-producto { margin-left: auto; }
+#menu-negocio > li {
+  position: relative;
+  isolation: isolate;
+  /* Padding de la tarjeta más 4 px: el círculo visible empieza 8 px dentro de la foto. */
+  --favorito-foto-top: calc(4.54px + 4px);
+  --favorito-foto-right: calc(5.68px + 4px);
+}
+
+.cabecera-negocio .negocio-notificaciones { grid-column: 3; grid-row: 1; }
+.foto-negocio-provisional { display: block; width: min(100%, 173px); height: 129px; object-fit: cover; border-radius: 13px; margin: 12px 0; }

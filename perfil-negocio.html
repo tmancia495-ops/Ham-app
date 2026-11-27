@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script src="./transiciones-ham.js"></script>
+  <meta charset="utf-8">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/ham-icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/ham-icon-180.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Ham!">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f0ea">
+  <title>Perfil del negocio · Ham!</title>
+  <link rel="stylesheet" href="./iniciar-sesion.css">
+  <link rel="stylesheet" href="./inicio.css">
+  <link rel="stylesheet" href="./busqueda.css">
+  <link rel="stylesheet" href="./marco-ham.css">
+  <link rel="stylesheet" href="./perfil-negocio.css">
+  <script src="./cuenta-local.js" defer></script>
+  <script src="./datos-negocios.js" defer></script>
+  <script src="./datos-inicio.js" defer></script>
+  <script src="./tarjeta-promocional.js" defer></script>
+  <script src="./favoritos-local.js" defer></script>
+  <script src="./rutas-negocio.js" defer></script>
+  <script src="./comercio-local.js" defer></script>
+  <script src="./barra-ham.js" defer></script>
+  <script src="./perfil-negocio.js" defer blocking="render"></script>
+  <link rel="stylesheet" href="./corazones.css">
+</head>
+<body class="marco-ham pagina-inicio pagina-negocio">
+  <main class="inicio negocio ham-contenido-cabecera" aria-labelledby="titulo-negocio" data-node-id="408:749">
+    <header class="cabecera-negocio">
+      <a id="volver-negocio" href="./inicio.html" aria-label="Volver"><img src="./assets/negocio-volver.svg" alt="" width="28" height="27"></a>
+      <h1 id="titulo-negocio">Perfil del negocio</h1>
+      <span id="favorito-negocio"></span>
+      <img class="negocio-notificaciones" src="./assets/negocio-notificaciones.svg" alt="">
+    </header>
+    <div id="contenido-negocio" hidden>
+      <section class="direccion-negocio" aria-labelledby="titulo-direccion">
+        <span class="ubicacion" aria-hidden="true"></span>
+        <div>
+          <h2 id="titulo-direccion">Ubicación</h2>
+          <p id="direccion-negocio"></p>
+        </div>
+        <img src="./assets/buscar-lupa.svg" alt="" width="19" height="19">
+      </section>
+
+      <section class="promocion-negocio" aria-label="Promoción de LOLO’S">
+        <h2><span id="marca-promocion"></span><strong id="nombre-promocion"></strong></h2>
+        <div class="arte-promocion"><img id="imagen-promocion" alt=""></div>
+        <button id="comprar-promocion" type="button">Comprar →</button>
+      </section>
+
+      <ul id="menu-negocio" aria-label="Menú"></ul>
+    </div>
+    <p id="negocio-no-disponible" hidden>Este negocio todavía no tiene un perfil disponible.</p>
+  </main>
+
+  <p id="aviso-negocio" role="status"></p>
+  <nav class="barra-inicio" aria-label="Navegación" data-barra-ham="negocio"></nav>
+
+  <template id="plantilla-producto">
+    <li>
+      <div class="tarjeta-producto">
+        <span class="foto-producto">
+          <span class="recorte-producto"><img alt=""></span>
+          <small></small>
+        </span>
+        <span class="datos-producto">
+          <span class="texto-producto"><strong></strong><span class="descripcion-producto"></span></span>
+          <span class="precio-producto"></span>
+        </span>
+      </div>
+    </li>
+  </template>
+</body>
+</html>

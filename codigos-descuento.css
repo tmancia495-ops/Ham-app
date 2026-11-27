@@ -1,0 +1,39 @@
+.pagina-cupones .cabecera-notificaciones { padding-bottom: 55px; }
+.contenido-cupones { position: relative; margin-top: -12px; padding: 0 20px 11px; }
+.formulario-cupon, .tarjeta-cupon { border: 1px solid #e7dad2; background: white; }
+.formulario-cupon { margin: 0; min-height: 160px; padding: 15px; border-radius: 18px; }
+.formulario-cupon h2, .tarjeta-cupon h3, .dialogo-cupon h2 { margin: 0; color: #740c03; font-family: 'Fredoka Bold', Fredoka, sans-serif; }
+.formulario-cupon h2 { margin: 2px 1px 8px; font-size: 20px; line-height: 25px; }
+.formulario-cupon p, .tarjeta-cupon p, .dialogo-cupon p { color: #846f6b; font-size: 12px; }
+.formulario-cupon > p:first-of-type { margin: 0 1px 17px; }
+.entrada-cupon { display: grid; grid-template-columns: minmax(0, 1fr) 87px; gap: 12px; }
+.entrada-cupon input { min-width: 0; padding: 0 11px; background: #f5f0ea; border: 1px solid #e7dad2; border-radius: 11px; color: #321010; font: 400 16px Fredoka, sans-serif; }
+.entrada-cupon input::placeholder { color: #846f6b; font-size: 13px; }
+.boton-cupon { display: grid; place-items: center; min-height: 49px; padding: 0 10px; border-radius: 11px; background: #740c03; color: #f5f0ea; font: 600 17px/22px Fredoka, sans-serif; text-decoration: none; text-align: center; }
+#mensaje-cupon { margin: 5px 1px 0; color: #740c03; }
+#mensaje-cupon:empty { margin: 0; }
+#titulo-cupones { margin: 29px 3px 13px; color: #846f6b; text-transform: uppercase; font: 700 12px/15px 'Fredoka Bold', Fredoka, sans-serif; }
+#lista-cupones { display: grid; gap: 19px; }
+.tarjeta-cupon { position: relative; display: grid; grid-template-columns: min(105px, 33%) minmax(0, 1fr); gap: 13px; min-height: 151px; padding: 9px; border-radius: 17px; }
+.beneficio-cupon { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 9px; min-height: 130px; padding: 10px; border-radius: 13px; background: #410102; color: #f5f0ea; font-family: 'Fredoka Bold', Fredoka, sans-serif; }
+.beneficio-cupon strong { font-size: 32px; line-height: 39px; overflow-wrap: anywhere; }
+.beneficio-cupon span { padding-left: 4px; font-size: 11px; }
+.texto-cupon { min-width: 0; padding: 9px 7px 4px 0; }
+.tarjeta-cupon h3 { font-size: 17px; line-height: 22px; overflow-wrap: anywhere; }
+.tarjeta-cupon p { margin: 8px 0 0; white-space: pre-line; }
+.pie-cupon { display: flex; flex-wrap: wrap; gap: 5px 10px; align-items: center; margin-top: 27px; }
+.etiqueta-cupon { min-width: 109px; padding: 5px 17px; border-radius: 9px; background: #f0e5df; color: #740c03; font: 600 14px/18px Fredoka, sans-serif; overflow-wrap: anywhere; }
+.detalle-cupon { position: absolute; display: grid; place-items: center; right: 10px; bottom: 8px; width: 42px; height: 42px; background: transparent; }
+.accion-cupon { color: #740c03; text-decoration: underline; background: transparent; min-height: 32px; }
+.tarjeta-cupon.envio { grid-template-columns: 59px minmax(0, 1fr); gap: 17px; min-height: 116px; padding: 9px 15px; }
+.envio .beneficio-cupon { align-self: center; align-items: center; padding: 0; width: 59px; min-height: 59px; border-radius: 50%; background: url('./assets/cupon-circulo.svg') no-repeat; }
+.envio .texto-cupon { padding-top: 5px; }
+.envio h3 { font-size: 18px; }
+.envio .pie-cupon { margin-top: 14px; }
+.envio .etiqueta-cupon { min-width: 89px; padding: 4px 13px; font: 700 11px/14px 'Fredoka Bold', Fredoka, sans-serif; }
+.explorar-cupones { min-height: 52px; margin: 48px 1px 0; border-radius: 13px; }
+.dialogo-cupon { width: min(346px, calc(100% - 40px)); margin: auto; border: 0; border-radius: 18px; padding: 22px; background: #f5f0ea; }
+.dialogo-cupon p { margin: 12px 0; }
+.dialogo-cupon::backdrop { background: #4101028c; }
+.dialogo-cupon button { width: 100%; }
+.pagina-cupones [hidden] { display: none !important; }

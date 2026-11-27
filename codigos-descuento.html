@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script src="./transiciones-ham.js"></script>
+  <meta charset="utf-8">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/ham-icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/ham-icon-180.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Ham!">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#410102">
+  <title>Códigos de descuento · Ham!</title>
+  <link rel="stylesheet" href="./iniciar-sesion.css">
+  <link rel="stylesheet" href="./inicio.css">
+  <link rel="stylesheet" href="./busqueda.css">
+  <link rel="stylesheet" href="./marco-ham.css">
+  <link rel="stylesheet" href="./notificaciones.css">
+  <link rel="stylesheet" href="./codigos-descuento.css">
+  <script src="./cuenta-local.js" defer></script>
+  <script src="./datos-cupones.js" defer></script>
+  <script src="./cupones-local.js" defer></script>
+  <script src="./pedidos-confirmados.js" defer></script>
+  <script src="./comercio-local.js" defer></script>
+  <script src="./barra-ham.js" defer></script>
+  <script src="./codigos-descuento.js" defer blocking="render"></script>
+</head>
+<body class="marco-ham pagina-inicio pagina-notificaciones pagina-cupones ham-cabecera-ilustrada">
+  <main class="inicio preferencias-notificaciones ham-contenido-cabecera" data-node-id="390:452" hidden>
+    <header class="cabecera-notificaciones">
+      <a href="./inicio.html#perfil" data-regreso-cabecera aria-label="Volver a Perfil"><img src="./assets/notificaciones-volver.svg" width="28" height="27" alt=""></a>
+      <h1>Códigos de descuento</h1>
+      <p>Tus promociones, siempre a la mano.</p>
+      <span class="campana-notificaciones" aria-hidden="true"><img src="./assets/cupon-ticket.svg" width="24" height="24" alt=""></span>
+    </header>
+    <div class="contenido-cupones">
+      <form id="formulario-cupon" class="formulario-cupon" novalidate>
+        <h2>¿Tienes un código?</h2>
+        <p>Escríbelo aquí para guardarlo en tu cuenta.</p>
+        <div class="entrada-cupon">
+          <input id="codigo-cupon" type="text" aria-label="Código de descuento" aria-describedby="mensaje-cupon" placeholder="Código de descuento" spellcheck="false" autocapitalize="characters" maxlength="64" required>
+          <button class="boton-cupon" type="submit">Aplicar</button>
+        </div>
+        <p id="mensaje-cupon" role="status"></p>
+      </form>
+      <section aria-labelledby="titulo-cupones">
+        <h2 id="titulo-cupones">Cupones</h2>
+        <div id="lista-cupones"></div>
+      </section>
+      <a class="boton-cupon explorar-cupones" href="./inicio.html">Explorar establecimientos</a>
+    </div>
+  </main>
+  <nav class="barra-inicio" aria-label="Navegación" data-barra-ham="cupones" hidden></nav>
+  <template id="plantilla-cupon">
+    <article class="tarjeta-cupon">
+      <div class="beneficio-cupon"><strong></strong><span></span></div>
+      <div class="texto-cupon">
+        <h3></h3><p></p>
+        <div class="pie-cupon"><span class="etiqueta-cupon"></span><button type="button" class="accion-cupon" hidden></button></div>
+        <p class="vigencia-cupon" hidden></p>
+      </div>
+      <button type="button" class="detalle-cupon" aria-label="Información del cupón" hidden><img src="./assets/cupon-flecha.svg" width="19" height="19" alt=""></button>
+    </article>
+  </template>
+  <dialog class="dialogo-cupon" aria-labelledby="titulo-detalle-cupon">
+    <h2 id="titulo-detalle-cupon"></h2>
+    <p></p>
+    <form method="dialog"><button class="boton-cupon">Cerrar</button></form>
+  </dialog>
+</body>
+</html>

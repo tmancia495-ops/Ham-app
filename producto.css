@@ -1,0 +1,67 @@
+.pagina-producto > main { padding: 24px 16px 20px; overflow-x: hidden; }
+.cabecera-producto { display: flex; align-items: center; gap: 6px; min-height: 39px; }
+.cabecera-producto a { display: grid; place-items: center; width: 30px; height: 39px; }
+#local-producto { font: 700 32px/39px 'Fredoka Bold', Fredoka, sans-serif; letter-spacing: -.64px; }
+#formulario-producto { position: relative; margin: 0; padding-top: 185px; }
+.foto-detalle { position: absolute; z-index: 1; top: 38px; left: 50%; width: min(269px, 90%); height: 227px; overflow: hidden; translate: -50%; pointer-events: none; }
+.foto-detalle img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.foto-detalle img.foto-tradicional { position: absolute; top: -31.17%; height: 148.44%; object-fit: cover; }
+.panel-producto { padding: 8px 7px 10px; border-radius: 15px; color: var(--crema); background: #5c170b; }
+.interior-producto { padding: 99px 6px 6px; border: 2px solid var(--crema); border-radius: 13px; }
+.informacion-producto { padding: 0 12px; min-height: 204px; }
+#nombre-producto { font: 700 24px/28px 'Fredoka Bold', Fredoka, sans-serif; }
+#categoria-producto { font-size: 12px; }
+#estrellas-producto { display: block; margin: 8px 0; }
+#estrellas-producto[hidden] { display: none; }
+#descripcion-detalle { margin-top: 8px; font-size: 15px; line-height: 14px; min-height: 28px; font-weight: 500; }
+#precio-detalle { margin-top: 10px; font: 700 48px/52px 'Fredoka Bold', Fredoka, sans-serif; }
+#grupo-extras, .reserva-producto { min-width: 0; border: 0; margin: 0; }
+#grupo-extras { padding: 0 12px; }
+#grupo-extras legend { padding: 0; font: 700 20px/24px 'Fredoka Bold', Fredoka, sans-serif; }
+#extras-producto { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 11px; }
+#extras-producto label { position: relative; display: block; cursor: pointer; }
+#extras-producto input { position: absolute; opacity: 0; }
+#extras-producto span { display: block; padding: 3px 6px; border-radius: 10px; background: var(--vino); font-size: 10.8px; line-height: 13px; }
+#extras-producto input:checked + span { color: var(--vino); background: var(--crema); }
+#extras-producto input:focus-visible + span { outline: 2px solid currentColor; outline-offset: 2px; }
+.cantidad-producto { display: flex; align-items: center; justify-content: space-between; width: 86px; margin: 9px 0 4px 2px; font-weight: 600; font-size: 15px; }
+.cantidad-producto button { display: grid; place-items: center; padding: 0; width: 26px; height: 26px; }
+.cantidad-producto button:disabled { opacity: .65; }
+.reserva-producto { padding: 6px 8px 8px 13px; border-radius: 10px; background: var(--crema); color: #5c170b; }
+.reserva-producto h2 { margin: 0 0 6px; font: 700 21px/25px 'Fredoka Bold', Fredoka, sans-serif; }
+.reserva-producto input, .reserva-producto select { width: 100%; height: 27px; min-width: 0; border: 0; border-radius: 20px; color: var(--crema); background: #5c170b; font: 10px Fredoka, sans-serif; }
+.reserva-producto input { padding: 0 12px; }
+.reserva-producto input::placeholder { color: var(--crema); opacity: 1; }
+.campos-reserva { display: grid; grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr); align-items: start; gap: 12px; margin-top: 12px; min-height: 59px; font-size: 10px; }
+.campos-reserva > div > p { text-align: right; padding-right: 7px; margin-bottom: 5px; }
+.hora-reserva { display: flex; gap: 3px; }
+.hora-reserva select { padding-inline: 5px; max-width: 44px; }
+.campos-reserva label { display: grid; gap: 5px; }
+.divisor-reserva { align-self: center; justify-self: center; rotate: 90deg; }
+#anadir-producto { display: block; min-height: 34px; margin: 4px auto 0; padding: 0 20px; border-radius: 20px; color: var(--crema); background: #5c170b; font: 700 24px/34px 'Fredoka Bold', Fredoka, sans-serif; }
+#anadir-producto:disabled { opacity: .65; cursor: default; }
+#estado-producto:not(:empty) { margin: 8px 0 0; text-align: center; font-size: 13px; }
+@media (pointer: coarse) {
+  .reserva-producto input { font-size: 16px; }
+  .reserva-producto input::placeholder { font-size: 10px; }
+}
+
+.marco-ham.pagina-producto > main { height: max(0px, 100% - var(--teclado-edicion, 0px)); }
+
+.selector-metodo-producto { margin: 5px 0 8px; color: var(--rojo); }
+#direccion-producto:not([hidden]) { margin: 0 0 8px; }
+
+.foto-detalle.foto-detalle-catalogo {
+  top: var(--detalle-arriba);
+  width: var(--detalle-ancho);
+  height: var(--detalle-alto);
+  margin-left: var(--detalle-centro);
+}
+.foto-detalle-catalogo img {
+  position: absolute;
+  width: var(--detalle-imagen-ancho);
+  height: var(--detalle-imagen-alto);
+  left: var(--detalle-imagen-izquierda);
+  top: var(--detalle-imagen-arriba);
+  object-fit: cover;
+}

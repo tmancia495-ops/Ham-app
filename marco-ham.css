@@ -1,0 +1,166 @@
+:root {
+  --ancho-diseno-ham: 402px;
+  --alto-cabecera-ham: 224px;
+  --arte-cabecera-ham: linear-gradient(#41010280, #41010280), url('./assets/splash-fondo.png') center top / 100% auto no-repeat #410102;
+  --alto-diseno-ham: 874px;
+  --alto-marco-ham: min(var(--alto-diseno-ham), 100dvh);
+  --espacio-bajo-marco-ham: max(0px, 100dvh - var(--alto-diseno-ham));
+  overflow: hidden;
+  background: #e9e0d9;
+}
+
+body.marco-ham {
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--ancho-diseno-ham);
+  height: var(--alto-marco-ham);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.marco-ham > main {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-width: none;
+  overscroll-behavior-y: contain;
+  scrollbar-width: none;
+}
+
+.marco-ham > main:not(.splash) { overflow: auto; }
+
+.marco-ham > .splash { overflow: clip; }
+
+/* Solo se captura el marco de la aplicación durante el cambio de vista. */
+@view-transition { navigation: auto; }
+
+:root { view-transition-name: none; }
+body.marco-ham { view-transition-name: ham-pantalla; }
+
+:root {
+  --duracion-transicion-ham: 300ms;
+  --curva-transicion-ham: cubic-bezier(0.22, 1, 0.36, 1);
+  --duracion-salida-splash: 350ms;
+  --duracion-entrada-acceso: 400ms;
+}
+::view-transition-image-pair(ham-pantalla) { overflow: clip; }
+::view-transition-old(ham-pantalla), ::view-transition-new(ham-pantalla) {
+  animation-duration: var(--duracion-transicion-ham);
+  animation-timing-function: var(--curva-transicion-ham);
+  animation-fill-mode: both;
+  mix-blend-mode: normal;
+}
+::view-transition-group(ham-pantalla) { animation-duration: var(--duracion-transicion-ham); }
+::view-transition-old(ham-pantalla) { animation-name: ham-salir-izquierda; }
+::view-transition-new(ham-pantalla) { animation-name: ham-entrar-derecha; }
+:active-view-transition-type(retroceso)::view-transition-old(ham-pantalla) { animation-name: ham-salir-derecha; }
+:active-view-transition-type(retroceso)::view-transition-new(ham-pantalla) { animation-name: ham-entrar-izquierda; }
+
+@keyframes ham-salir-izquierda { to { transform: translateX(-100%); } }
+@keyframes ham-entrar-derecha { from { transform: translateX(100%); } }
+@keyframes ham-salir-derecha { to { transform: translateX(100%); } }
+@keyframes ham-entrar-izquierda { from { transform: translateX(-100%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(ham-pantalla),
+  ::view-transition-old(ham-pantalla),
+  ::view-transition-new(ham-pantalla) { animation: none !important; }
+}
+
+/* Una sola superficie ilustrada, independiente del scroll y de la barra. */
+.marco-ham.ham-cabecera-ilustrada {
+  background: #f5f0ea;
+}
+.marco-ham.ham-cabecera-ilustrada::before,
+.ham-cabecera-ilustrada .barra-inicio::before { display: none; }
+.marco-ham.ham-cabecera-ilustrada::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 auto;
+  height: var(--alto-cabecera-ham);
+  background: var(--arte-cabecera-ham);
+  background-clip: content-box, content-box, border-box;
+  padding-bottom: 1px;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+:root:is(:active-view-transition-type(cabecera-compartida), :active-view-transition-type(paneles-compartidos)) .ham-cabecera-ilustrada {
+  view-transition-name: none;
+}
+:root:active-view-transition-type(cabecera-compartida) .ham-cabecera-ilustrada::after {
+  view-transition-name: ham-cabecera-fija;
+}
+:root:is(:active-view-transition-type(cabecera-compartida), :active-view-transition-type(paneles-compartidos)) .ham-contenido-cabecera:not([hidden]) {
+  view-transition-name: ham-contenido-cabecera;
+}
+::view-transition-group(ham-cabecera-fija) { animation: none; z-index: 0; }
+::view-transition-old(ham-cabecera-fija) { animation: none; opacity: 0; }
+::view-transition-new(ham-cabecera-fija) { animation: none; }
+::view-transition-group(ham-contenido-cabecera) { animation: none; overflow: clip; z-index: 1; }
+::view-transition-old(ham-contenido-cabecera),
+::view-transition-new(ham-contenido-cabecera) {
+  animation: 320ms var(--curva-transicion-ham) both;
+  mix-blend-mode: normal;
+}
+::view-transition-old(ham-contenido-cabecera) { animation-name: ham-salir-izquierda; }
+::view-transition-new(ham-contenido-cabecera) { animation-name: ham-entrar-derecha; }
+:root:active-view-transition-type(retroceso)::view-transition-old(ham-contenido-cabecera) { animation-name: ham-salir-derecha; }
+:root:active-view-transition-type(retroceso)::view-transition-new(ham-contenido-cabecera) { animation-name: ham-entrar-izquierda; }
+:root:is(:active-view-transition-type(cabecera-compartida), :active-view-transition-type(paneles-compartidos))::view-transition-group(ham-barra) { z-index: 2; }
+
+/* La captura saliente se queda debajo del arte que revela la cortina. */
+:root:active-view-transition-type(cortina-repartidor) .barra-inicio,
+:root:active-view-transition-type(cortina-repartidor) .formulario-rol-ham {
+  view-transition-name: none;
+}
+:root:active-view-transition-type(cortina-repartidor) .formulario-rol-ham::after {
+  view-transition-name: ham-arte-repartidor;
+}
+:root:active-view-transition-type(cortina-repartidor) .solicitud-repartidor:not([hidden]) {
+  view-transition-name: ham-formulario-repartidor;
+}
+:root:active-view-transition-type(cortina-repartidor)::view-transition-group(ham-pantalla),
+:root:active-view-transition-type(cortina-repartidor)::view-transition-old(ham-pantalla),
+::view-transition-group(ham-arte-repartidor),
+::view-transition-group(ham-formulario-repartidor) { animation: none; }
+::view-transition-group(ham-arte-repartidor) { z-index: 1; }
+::view-transition-group(ham-formulario-repartidor) { z-index: 2; }
+::view-transition-new(ham-arte-repartidor) {
+  animation: ham-revelar-arte 260ms var(--curva-transicion-ham) both;
+}
+::view-transition-new(ham-formulario-repartidor) {
+  animation: ham-mostrar-formulario 200ms ease-out 260ms both;
+}
+@keyframes ham-revelar-arte {
+  from { clip-path: inset(0 0 max(0px, 100% - var(--alto-cabecera-ham)) 0); }
+  to { clip-path: inset(0); }
+}
+@keyframes ham-mostrar-formulario { from { opacity: 0; } to { opacity: 1; } }
+:root:active-view-transition-type(regreso-formulario-rol) { --duracion-transicion-ham: 320ms; }
+:root:active-view-transition-type(regreso-formulario-rol)::view-transition-new(ham-barra) {
+  animation: ham-mostrar-formulario 320ms step-end both;
+}
+
+/* Al salir a Inicio o Buscar, el fondo de destino aparece debajo de la cabecera fija. */
+:root:active-view-transition-type(salida-perfil) body.marco-ham {
+  view-transition-name: none;
+}
+:root:active-view-transition-type(salida-perfil) .ham-contenido-cabecera:not([hidden]) {
+  view-transition-name: ham-contenido-cabecera;
+}
+:root:active-view-transition-type(salida-perfil) .ham-cabecera-ilustrada::after {
+  view-transition-name: ham-cabecera-fija;
+}
+:root:active-view-transition-type(salida-perfil)::view-transition-old(ham-cabecera-fija) {
+  animation: ham-retirar-cabecera 320ms var(--curva-transicion-ham) both;
+}
+:root:active-view-transition-type(salida-perfil)::view-transition-group(ham-barra) { z-index: 2; }
+@keyframes ham-retirar-cabecera { from { opacity: 1; } to { opacity: 0; } }
+
+:root:active-view-transition-type(catalogo-negocio) body.pagina-inicio { view-transition-name: none; }
+:root:active-view-transition-type(catalogo-negocio) .ham-contenido-cabecera:not([hidden]) { view-transition-name: ham-contenido-cabecera; }
+:root:active-view-transition-type(catalogo-negocio)::view-transition-group(ham-barra) { z-index: 2; }

@@ -1,0 +1,139 @@
+.pagina-seguimiento > main { padding: 65px 20px 23px; }
+.pagina-seguimiento [hidden] { display: none !important; }
+.encabezado-seguimiento { display: flex; align-items: center; gap: 15px; min-height: 41px; margin-bottom: 12px; }
+.encabezado-seguimiento a { display: grid; place-items: center; width: 25px; }
+.encabezado-seguimiento h1 { font: 700 24px/29px 'Fredoka Bold', Fredoka, sans-serif; }
+#pedido-seguimiento { display: flow-root; }
+
+.estado-destacado {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 162px;
+  padding: 17px 18px 12px;
+  border-radius: 18px;
+  background: var(--vino);
+  color: var(--crema);
+}
+.ovalo-estado { position: absolute; z-index: -1; top: 9px; left: calc(100% - 55px); }
+#folio-estado { font: 700 11px/14px 'Fredoka Bold', Fredoka, sans-serif; }
+#titulo-estado { margin: 16px 0 6px; font: 700 25px/29px 'Fredoka Bold', Fredoka, sans-serif; }
+#mensaje-estado { font-size: 14px; line-height: 17px; }
+.pildora-estado {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: fit-content;
+  min-width: 167px;
+  min-height: 29px;
+  margin-top: 19px;
+  padding: 4px 10px;
+  border-radius: 15px;
+  background: var(--crema);
+  color: var(--rojo);
+  font-size: 13px;
+}
+.pildora-estado img { display: block; }
+.pildora-estado img[src$="pedido-recibo.svg"] { filter: brightness(.25) sepia(1) saturate(8); }
+
+.tarjeta-seguimiento { border: 1px solid #e8dbd4; border-radius: 17px; background: #fffdfc; }
+.progreso-pedido { min-height: 270px; margin-top: 18px; padding: 17px 17px 15px; }
+.progreso-pedido h2 { margin: 0; font: 700 21px/26px 'Fredoka Bold', Fredoka, sans-serif; }
+#etapa-actual { margin-top: 7px; font-size: 13px; color: var(--texto-secundario); }
+#etapas-seguimiento {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  margin: 22px 5px 0 7px;
+  padding: 0;
+  list-style: none;
+}
+.etapa-pedido { display: grid; align-items: center; justify-items: start; color: var(--texto-secundario); font-size: 12px; font-weight: 500; }
+.etapa-barra { width: 100%; height: 8px; border-radius: 4px; background: #f0e5df; transition: background-color 220ms ease-out; }
+.etapa-pedido[data-avanzada] { color: var(--rojo); font-weight: 600; }
+.etapa-pedido[data-avanzada] .etapa-barra { background: var(--rojo); }
+.etapa-icono { position: relative; display: grid; place-items: center; width: 25px; height: 25px; margin: 13px 0 11px 6px; }
+.etapa-icono img, .etapa-icono span { grid-area: 1 / 1; }
+.etapa-icono img:first-child { z-index: 0; }
+.etapa-icono img:nth-child(2), .etapa-icono span { z-index: 1; }
+.etapa-pedido > strong { margin-left: -5px; font-weight: inherit; }
+.aviso-etapa { display: flex; align-items: center; gap: 13px; min-height: 63px; margin-top: 27px; padding: 8px 12px; border-radius: 13px; background: #f0e5df; }
+.aviso-etapa h3 { margin: 0 0 6px; font-size: 16px; font-weight: 600; }
+.aviso-etapa p, #importe-seguimiento, #ubicacion-recepcion { color: var(--texto-secundario); font-size: 12px; }
+
+.resumen-seguimiento { display: grid; grid-template-columns: 91px minmax(0, 1fr); gap: 14px; min-height: 113px; margin-top: 14px; padding: 11px; }
+#foto-pedido { display: block; width: 91px; height: 88px; object-fit: cover; border-radius: 13px; }
+#negocios-pedido { margin: 3px 0 5px; font-size: 14px; font-weight: 700; }
+#productos-seguimiento { margin: 0; padding: 0; list-style: none; color: #321010; font-size: 16px; font-weight: 600; overflow-wrap: anywhere; }
+#importe-seguimiento { margin-top: 11px; }
+.recepcion-seguimiento { display: grid; grid-template-columns: 47px minmax(0, 1fr); gap: 14px; align-items: center; min-height: 77px; margin-top: 16px; padding: 11px; }
+.recepcion-seguimiento > span { display: grid; place-items: center; width: 47px; height: 47px; border-radius: 14px; background: #f0e5df; }
+.recepcion-seguimiento h2 { margin: 0 0 7px; font-size: 17px; font-weight: 600; }
+#ubicacion-recepcion { overflow-wrap: anywhere; }
+.accion-seguimiento { display: flex; align-items: center; justify-content: center; gap: 18px; width: 100%; min-height: 49px; padding: 7px 12px; border-radius: 13px; background: var(--rojo); color: var(--crema); font-size: 18px; font-weight: 600; text-align: center; text-decoration: none; }
+#abrir-detalle-pedido { justify-content: start; margin-top: 14px; padding-inline-start: clamp(14px, 10vw, 41px); }
+.panel-seguimiento {
+  position: fixed;
+  inset: 0 0 var(--espacio-bajo-marco-ham);
+  width: min(calc(100% - 48px), 354px);
+  max-width: none;
+  max-height: calc(var(--alto-marco-ham) - 32px);
+  margin: auto;
+  padding: 21px 22px 20px;
+  border: 0;
+  border-radius: 22px;
+  background: var(--crema);
+  color: var(--vino);
+  font-family: Fredoka, sans-serif;
+  overflow: auto;
+}
+.panel-seguimiento[open] { animation: entrar-panel-pedido 220ms ease-out; }
+.panel-seguimiento::backdrop {
+  background: #4101027d;
+  clip-path: inset(0 max(0px, (100% - var(--ancho-diseno-ham)) / 2) var(--espacio-bajo-marco-ham));
+}
+@keyframes entrar-panel-pedido { from { opacity: 0; translate: 0 8px; } to { opacity: 1; translate: 0 0; } }
+.panel-seguimiento h2 { margin: 0 0 14px; font-size: 24px; font-weight: 600; }
+.panel-seguimiento p, #lineas-detalle-pedido { margin: 4px 0; color: var(--texto-secundario); overflow-wrap: anywhere; }
+#lineas-detalle-pedido { padding-left: 17px; }
+#lineas-detalle-pedido li + li { margin-top: 6px; }
+.panel-seguimiento strong { color: var(--vino); }
+.panel-seguimiento .accion-seguimiento { margin-top: 22px; min-height: 45px; font-size: 17px; }
+@media (prefers-reduced-motion: reduce) {
+  .etapa-barra { transition: none; }
+  .panel-seguimiento[open] { animation: none; }
+}
+
+.pagina-seguimiento[data-metodo="entrega"] #etapas-seguimiento { grid-template-columns: repeat(6, minmax(0, 1fr)); margin-left: 0; margin-right: 0; gap: 4px; }
+.pagina-seguimiento[data-metodo="entrega"] .etapa-pedido {
+  grid-template-rows: 8px auto 2.4em;
+  justify-items: center;
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.2;
+  align-items: start;
+}
+.pagina-seguimiento[data-metodo="entrega"] .etapa-pedido > strong { margin: 0; overflow-wrap: anywhere; }
+.pagina-seguimiento[data-metodo="entrega"] .etapa-icono { margin: 13px 0 8px; }
+.etapa-icono .icono-etapa-entrega { width: 15px; height: 15px; object-fit: contain; filter: brightness(0) invert(1); }
+.pildora-estado img[src$="carrito-entrega.svg"] { width: 18px; height: 18px; object-fit: contain; }
+#opciones-seguimiento-entrega { display: grid; gap: 14px; margin-top: 14px; }
+.dato-entrega { padding: 13px 15px; }
+.dato-entrega h2 { margin: 0 0 5px; font-size: 17px; font-weight: 600; }
+.dato-entrega p { color: var(--texto-secundario); font-size: 13px; overflow-wrap: anywhere; }
+.perfil-repartidor { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+#foto-repartidor { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+#contactar-repartidor { color: var(--rojo); text-decoration: underline; font-size: 13px; }
+#trayecto-entrega {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 138px;
+  margin-top: 9px;
+  padding: 12px;
+  overflow: hidden;
+  border-radius: 13px;
+  background: #f0e5df;
+  text-align: center;
+}
+#mapa-entrega { position: absolute; inset: 0; }

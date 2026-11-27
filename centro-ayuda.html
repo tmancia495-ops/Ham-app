@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script src="./transiciones-ham.js"></script>
+  <meta charset="utf-8">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/ham-icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/ham-icon-180.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Ham!">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <meta name="theme-color" content="#410102">
+  <title>Centro de ayuda · Ham!</title>
+  <link rel="stylesheet" href="./iniciar-sesion.css">
+  <link rel="stylesheet" href="./inicio.css">
+  <link rel="stylesheet" href="./busqueda.css">
+  <link rel="stylesheet" href="./marco-ham.css">
+  <link rel="stylesheet" href="./repartidor.css">
+  <link rel="stylesheet" href="./centro-ayuda.css">
+  <script src="./cuenta-local.js" defer></script>
+  <script src="./pedidos-confirmados.js" defer></script>
+  <script src="./comercio-local.js" defer></script>
+  <script src="./barra-ham.js" defer></script>
+  <script src="./datos-ayuda.js" defer></script>
+  <script src="./centro-ayuda.js" defer blocking="render"></script>
+</head>
+<body class="marco-ham pagina-inicio pagina-ayuda ham-cabecera-ilustrada">
+  <main class="inicio centro-ayuda ham-contenido-cabecera" data-node-id="401:295">
+    <header class="cabecera-repartidor cabecera-ayuda">
+      <a class="volver-repartidor" href="./inicio.html#perfil" data-regreso-cabecera aria-label="Volver a Perfil">‹</a>
+      <p>Centro de ayuda</p>
+      <h1>¿En qué podemos ayudarte?</h1>
+      <p>Estamos aquí para resolver tus dudas.</p>
+    </header>
+    <div class="cuerpo-ayuda">
+      <label class="buscar-ayuda"><span aria-hidden="true">⌕</span><input type="search" id="consulta-ayuda" aria-label="Buscar una pregunta" placeholder="Buscar una pregunta" autocomplete="off"></label>
+      <section class="temas-ayuda" aria-labelledby="titulo-temas-ayuda">
+        <h2 id="titulo-temas-ayuda">Temas populares</h2>
+        <div id="opciones-temas-ayuda"></div>
+      </section>
+      <section class="preguntas-ayuda" aria-labelledby="titulo-preguntas-ayuda">
+        <div class="titulo-preguntas-ayuda">
+          <h2 id="titulo-preguntas-ayuda">Preguntas frecuentes</h2>
+          <button id="todas-preguntas-ayuda" type="button">Ver todas</button>
+        </div>
+        <div id="lista-preguntas-ayuda"></div>
+        <p id="sin-resultados-ayuda" role="status" hidden>No encontramos esa pregunta. Prueba con otras palabras o contáctanos.</p>
+      </section>
+      <button id="contacto-ayuda" class="contacto-ayuda" type="button" aria-haspopup="dialog">
+        <span><strong>¿Necesitas más ayuda?</strong><small>Escríbenos para recibir orientación.</small></span>
+        <span aria-hidden="true">›</span>
+      </button>
+    </div>
+  </main>
+  <nav class="barra-inicio" aria-label="Navegación" data-barra-ham="ayuda"></nav>
+  <template id="plantilla-pregunta-ayuda">
+    <article class="pregunta-ayuda">
+      <h3><button type="button" aria-expanded="false"><span><strong></strong><small></small></span><span class="flecha-ayuda" aria-hidden="true">⌄</span></button></h3>
+      <div class="respuesta-ayuda" inert><div><p></p><div class="enlaces-ayuda"></div></div></div>
+    </article>
+  </template>
+  <dialog class="confirmacion-repartidor dialogo-ayuda" aria-labelledby="titulo-contacto-ayuda">
+    <h2 id="titulo-contacto-ayuda">Contactar a Ham!</h2>
+    <input id="correo-soporte-ayuda" aria-label="Correo de soporte" value="hamcontacto@gmail.com" readonly>
+    <div class="acciones-contacto-ayuda">
+      <a href="mailto:hamcontacto@gmail.com?subject=Ayuda%20con%20Ham!">Abrir correo</a>
+      <button type="button" id="copiar-correo-ayuda">Copiar correo</button>
+    </div>
+    <p role="status" id="estado-copia-ayuda"></p>
+    <form method="dialog"><button class="boton-repartidor">Cerrar</button></form>
+  </dialog>
+</body>
+</html>
